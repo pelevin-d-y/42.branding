@@ -1,0 +1,26 @@
+{
+  "name": "42.branding",
+  "version": "1.0.0",
+  "description": "42.branding",
+  "author": "pelevin-d-y",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.4.0",
+    "vue-svg-loader": "^0.12.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0"
+  }
+}
