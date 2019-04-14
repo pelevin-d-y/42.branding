@@ -22,9 +22,8 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
-import Logo from '~/assets/images/logo-main.svg'
-import LogoShadow from '~/assets/images/logo-main-shadow.svg'
+import Logo from '~/assets/images/logo-main.svg?inline'
+import LogoShadow from '~/assets/images/logo-main-shadow.svg?inline'
 
 export default {
   components: {

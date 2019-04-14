@@ -32,33 +32,33 @@ export default {
     return {
       slides: [
         {
-          title: 1,
-          subtitle: 'subtitle',
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
           src: require('~/assets/images/digdeep.jpg')
         },
         {
-          title: 2,
-          subtitle: 'subtitle',
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
           src: require('~/assets/images/dragondrop.jpg')
         },
         {
-          title: 3,
-          subtitle: 'subtitle',
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
           src: require('~/assets/images/grandlukto.jpg')
         },
         {
-          title: 4,
-          subtitle: 'subtitle',
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
           src: require('~/assets/images/ready_at_dawn.jpg')
         },
         {
-          title: 5,
-          subtitle: 'subtitle',
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
           src: require('~/assets/images/statebird1.jpg')
         },
         {
-          title: 6,
-          subtitle: 'subtitle',
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
           src: require('~/assets/images/yourgratefulnation.jpg')
         }
       ],
@@ -203,16 +203,12 @@ export default {
 </script>
 
 <style lang="scss">
-  .portfolio-enter-active, .portfolio-leave-active {
-    transition: opacity .5s ease;
-  }
 
-  .portfolio-enter-active {
-    transition-delay: .5s;
-  }
+  .page {
+    height: calc(100vh - 84px);
+    width: 100%;
+    min-height: 670px;
 
-  .portfolio-enter, .portfolio-leave-active {
-    opacity: 0;
   }
 
   .portfolio {
@@ -227,6 +223,7 @@ export default {
     width: 100%;
     max-width: 55%;
     margin: 0 auto;
+    padding-bottom: 60px;
     text-align: center;
 
     display: flex;
@@ -247,17 +244,18 @@ export default {
     margin: 0;
     position: relative;
     overflow: hidden;
+    // background: url('~left.svg');
 
     &--sliding {
       pointer-events: none;
     }
 
     &.cursorLeft {
-      cursor: url('../assets/images/left.svg'), auto;
+      cursor: url('~assets/images/left.svg'), auto;
     }
 
     &.cursorRight {
-      cursor: url('../assets/images/right.svg'), auto;
+      cursor: url('~assets/images/right.svg'), auto;
     }
   }
 
@@ -326,9 +324,6 @@ export default {
       align-items: center;
 
       &:hover {
-        .slider-item__name {
-          border-color: #F8E5C1;
-        }
         img {
           box-shadow: 0 0 6px 0 rgba(0,0,0,0.07), 0 6px 6px 0 rgba(0,0,0,0.14);
         }
@@ -366,24 +361,28 @@ export default {
   }
 
   .slider-item__name {
-    margin-bottom: 5px;
+    align-self: flex-start;
 
-    font-size: 33px;
+    letter-spacing: 0.01em;
+    color: #000105;
+    font-size: 40px;
     font-weight: bold;
-    color: #4c4c4c;
-    letter-spacing: 2.2px;
     text-transform: uppercase;
-    border-bottom: 7px solid rgba(255,255,255,0);
-    line-height: 16px;
+    line-height: 46px;
     transition: border-color 0.3s ease;
   }
 
   .slider-item__description {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.54);
-    letter-spacing: 0;
-    line-height: 20px;
+    align-self: flex-start;
     margin-bottom: 20px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+
+    color: rgba(0, 1, 5, 0.25);
   }
 
   .slider-prev,

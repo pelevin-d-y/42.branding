@@ -45,19 +45,27 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
+    extend: (config) => {
       const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
       svgRule.test = /\.(png|jpe?g|gif|webp)$/;
 
       config.module.rules.push({
         test: /\.svg$/,
-        loader: 'vue-svg-loader',
+        oneOf: [
+          {
+            resourceQuery: /inline/,
+            loader: 'vue-svg-loader',
+          },
+          {
+            loader: 'file-loader',
+            query: {
+              name: 'assets/[name].[hash:8].[ext]',
+            },
+          },
+        ],
       });
-    }
+    },
   },
 
   vendor: ['normalize.css']
