@@ -11,12 +11,12 @@
           | We create the face for the interact
       nav.nav
         ul
-          li
-            nuxt-link(to="/projects") Projects
-          li
-            nuxt-link(to="/about") About
-          li
-            nuxt-link(to="/contact") Contact
+          li.nav-item
+            nuxt-link.nav-link(to="/projects") Projects
+          li.nav-item
+            nuxt-link.nav-link(to="/about") About
+          li.nav-item
+            nuxt-link.nav-link(to="/contact") Contact
 
 
 </template>
@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss">
 @import url('https://use.typekit.net/mzr0qwe.css');
+
 body {
   margin: 0;
   font-family: bio-sans
@@ -59,13 +60,22 @@ body {
   padding-right: 32px;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 </style>
 
 
 <style scoped lang="scss">
   .home {
     height: 100vh;
-    background: linear-gradient(180deg, #F98430 0%, #FFA63E 100%);
+    min-height: 650px;
+    background: linear-gradient(180deg, #3431DC 0%, #615EEE 100%);
   }
 
   .container {
@@ -83,28 +93,30 @@ body {
   }
 
   .nav {
-    ul {
-      list-style: none;
-    }
+    margin-top: 80px;
+  }
 
-    li {
-      margin-bottom: 32px;
+  .nav-link {
+    display: block;
 
-      &:last-child {
-         margin-bottom: 0;
-      }
-    }
+    font-size: 88px;
+    line-height: 80px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
 
-    a {
-      display: block;
+  .nav ul {
+    list-style: none;
+    padding-left: 45px;
+  }
 
-      font-size: 88px;
-      line-height: 80px;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      font-weight: bold;
+  .nav-item {
+    margin-bottom: 55px;
 
-      color: #FFFFFF;
+    &:last-child {
+        margin-bottom: 0;
     }
   }
 
@@ -125,15 +137,68 @@ body {
     z-index: 9;
   }
 
+  .logo-shadow svg {
+    width: 275px;
+  }
+
   .logo-text {
     font-size: 18px;
     line-height: 32px;
     letter-spacing: 0.01em;
 
-    color: #000105;
+    color: #ffffff;
   }
 
-  .nav {
-    margin-top: 40px;
+  @media (max-width: 768px) {
+    .home {
+      height: auto;
+      min-height: 100vh;
+      padding-bottom: 60px;
+      padding-top: 60px;
+    }
+
+    .container {
+      top: auto;
+      transform: translateY(0);
+      flex-flow: column nowrap;
+      justify-content: center;
+    }
+
+    .logo {
+      max-width: 250px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+    }
+
+    .logo-text {
+      text-align: center;
+    }
+
+    .logo-shadow svg {
+      // max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+
+    .nav {
+      margin-top: 55px;
+    }
+
+    .nav ul {
+      padding-left: 0;
+    }
+
+    .nav-item {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .nav-link {
+      display: inline;
+      font-size: 46px;
+      line-height: 52px;
+    }
   }
 </style>

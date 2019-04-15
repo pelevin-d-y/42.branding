@@ -1,11 +1,14 @@
 <template lang="pug">
-  .about ABOUT
+  .about
+    .container
+      | about
 
 </template>
 
 <script>
 export default {
-
+  layout: 'item-page',
+  name: 'About',
 }
 </script>
 

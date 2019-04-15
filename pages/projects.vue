@@ -5,6 +5,16 @@
         @click="setSlide(i)"
         v-for="dot, i in slides")
       .slider-dots__dot.active(:style="{width: oneDotWidth / slides.length + 'px', transform: 'translateX(' + (oneDotWidth / slides.length * slideIndex) + 'px)'}")
+    .slider-navigation
+      .slider__btn-left(@click="prev(slides)")
+        sliderBtnLeft
+      .slider__digits
+        span.slider__digits-current
+          | {{ slideIndex + 1 }} /
+        span.slider__digits-length
+          |  {{ slides.length }}
+      .slider__btn-right(@click="next(slides)")
+        sliderBtnRight
     .slider-container(@click="sidesClick" ref="container", :class="{'cursorLeft': cursorLeft, 'cursorRight': cursorRight}")
       .slider(ref="slider")
         .slider-content(:style="{width: slidesWidth + 'px', transform: 'translate3d(' + translateOffset  + 'px,0,0)'}")
@@ -23,10 +33,17 @@
 </template>
 
 <script>
+import sliderBtnLeft from '~/assets/images/slider-btn-left.svg?inline'
+import sliderBtnRight from '~/assets/images/slider-btn-right.svg?inline'
+
 export default {
   layout: 'item-page',
-
   name: 'Projects',
+
+  components: {
+    sliderBtnLeft,
+    sliderBtnRight
+  },
 
   data () {
     return {
@@ -90,6 +107,7 @@ export default {
 
     if (window.outerWidth > 768) {
       window.onresize = () => {
+        this.oneDotWidth = (window.getComputedStyle(this.$refs.dots).width).replace('px', '')
         this.slidesWidth = this.getSlidesWidth()
       }
 
@@ -202,13 +220,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
   .page {
     height: calc(100vh - 84px);
     width: 100%;
-    min-height: 670px;
-
+    min-height: 500px;
   }
 
   .portfolio {
@@ -241,10 +257,10 @@ export default {
     height: 100%;
     width: 100%;
     padding: 0;
+    padding-bottom: 30px;
     margin: 0;
     position: relative;
     overflow: hidden;
-    // background: url('~left.svg');
 
     &--sliding {
       pointer-events: none;
@@ -260,11 +276,11 @@ export default {
   }
 
   .slider-dots {
-    width: 250px;
+    width: calc(55vw - 200px);
     background: rgba(11, 30, 38, 0.2);
 
     position: absolute;
-    bottom: 30px;
+    bottom: 84px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -272,8 +288,39 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    border-radius: 2px;
 
     z-index: 11;
+  }
+
+  .slider-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 304px;
+
+    z-index: 11;
+  }
+
+  .slider__digits {
+    padding-top: 9px;
+
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .slider__digits-length {
+    color: rgba(11, 30, 38, 0.2);
+  }
+
+  .slider__btn-left,
+  .slider__btn-right {
+    cursor: pointer;
   }
 
   .slider-dots__dot {
@@ -291,7 +338,8 @@ export default {
       position: absolute;
       left: 0;
       top: 0;
-      background: #2f626d;
+      border-radius: 2px;
+      background: #3431DC;
     }
   }
 
@@ -407,9 +455,34 @@ export default {
     right: 30px;
   }
 
+  @media (max-width: 1024px) {
+    .slider-item__name {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    .slider-item__description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
   @media (max-width: 768px) {
+    .page {
+      height: auto;
+    }
+
     .slider-dots {
       display: none;
+    }
+
+    .slider-navigation {
+      display: none;
+    }
+
+    .slider-item__description {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .slider-container {

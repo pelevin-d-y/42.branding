@@ -27,6 +27,7 @@ export default {
   ** Global CSS
   */
   css: [
+    // {src: 'normalize.css'},
   ],
 
   /*
@@ -66,7 +67,8 @@ export default {
         ],
       });
     },
+
+    vendor: ['normalize.css']
   },
 
-  vendor: ['normalize.css']
 }
