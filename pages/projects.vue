@@ -320,7 +320,12 @@ export default {
 
   .slider__btn-left,
   .slider__btn-right {
+    display: block;
     cursor: pointer;
+
+    &:hover .btn-hover {
+      fill: #615EEE;
+    }
   }
 
   .slider-dots__dot {

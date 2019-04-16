@@ -1,5 +1,6 @@
 <template lang="pug">
   .page.home
+    Tetris
     .container
       .logo-wrapper
         .logo
@@ -25,10 +26,13 @@
 import Logo from '~/assets/images/logo-main.svg?inline'
 import LogoShadow from '~/assets/images/logo-main-shadow.svg?inline'
 
+import Tetris from '~/components/Tetris'
+
 export default {
   components: {
     Logo,
-    LogoShadow
+    LogoShadow,
+    Tetris
   }
 }
 </script>
@@ -73,6 +77,7 @@ body {
 
 <style scoped lang="scss">
   .home {
+    position: relative;
     height: 100vh;
     min-height: 650px;
     background: linear-gradient(180deg, #3431DC 0%, #615EEE 100%);
@@ -80,6 +85,7 @@ body {
 
   .container {
     position: relative;
+    z-index: 10;
     top: 50%;
     transform: translateY(-50%);
 
