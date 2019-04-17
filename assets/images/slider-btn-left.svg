@@ -3,7 +3,7 @@
 <rect class="btn-hover" x="1" y="1" width="32" height="32" fill="white" stroke="#000105" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M33 1L41 9V41L33 33V1Z" fill="#000105" stroke="#000105" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M10 41L1 32.9999L33 32.9999L41 41L10 41Z" fill="#000105" stroke="#000105" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8 17L25 17" stroke="#000105" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/>
-<path d="M15 24L8 17L15 10" stroke="#000105" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="btn-hover-stroke" d="M8 17L25 17" stroke="#000105" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/>
+<path class="btn-hover-stroke" d="M15 24L8 17L15 10" stroke="#000105" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>

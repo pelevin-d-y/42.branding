@@ -1,0 +1,33 @@
+@import url('https://use.typekit.net/mzr0qwe.css');
+
+body {
+  margin: 0;
+  font-family: bio-sans
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .3s ease;
+}
+
+.page-enter-active {
+  transition-delay: .3s;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+.container {
+  max-width: 994px;
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

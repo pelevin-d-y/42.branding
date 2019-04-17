@@ -1,6 +1,6 @@
 <template lang="pug">
   .page.home
-    Tetris
+    // Tetris
     .container
       .logo-wrapper
         .logo
@@ -38,39 +38,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://use.typekit.net/mzr0qwe.css');
-
-body {
-  margin: 0;
-  font-family: bio-sans
-}
-
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s ease;
-}
-
-.page-enter-active {
-  transition-delay: .5s;
-}
-
-.page-enter, .page-leave-active {
-  opacity: 0;
-}
-
-.container {
-  max-width: 994px;
-  width: 100%;
-  padding-left: 32px;
-  padding-right: 32px;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
 
 </style>
 
@@ -111,6 +78,13 @@ body {
     text-decoration: none;
     font-weight: bold;
     color: #FFFFFF;
+
+    transition: all 0.1s linear;
+
+    &:hover {
+      -webkit-text-stroke: 2px white;
+      color: transparent;
+    }
   }
 
   .nav ul {

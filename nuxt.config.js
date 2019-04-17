@@ -27,7 +27,7 @@ export default {
   ** Global CSS
   */
   css: [
-    // {src: 'normalize.css'},
+    'assets/main.scss',
   ],
 
   /*

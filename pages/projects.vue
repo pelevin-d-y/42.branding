@@ -23,7 +23,7 @@
             v-for="slide, index in slides",
             :class="{'previous': index < slideIndex, 'active': index === slideIndex, 'next': index > slideIndex }")
             .slider-item__inner(@click="eventStopPropagation")
-              nuxt-link(:to="'/portfolio/' + (slide.alias ? slide.alias : index)")
+              nuxt-link(:to="'/project/' + slide.index")
                 .slider-item__name
                   | {{ slide.title }}
                 .slider-item__description
@@ -49,31 +49,37 @@ export default {
     return {
       slides: [
         {
+          index: 1,
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/digdeep.jpg')
         },
         {
+          index: 2,
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/dragondrop.jpg')
         },
         {
+          index: 3,
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/grandlukto.jpg')
         },
         {
+          index: 4,
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/ready_at_dawn.jpg')
         },
         {
+          index: 5,
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/statebird1.jpg')
         },
         {
+          index: 6,
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/yourgratefulnation.jpg')
@@ -324,7 +330,11 @@ export default {
     cursor: pointer;
 
     &:hover .btn-hover {
-      fill: #615EEE;
+      fill: #3431DC;
+    }
+
+    &:hover .btn-hover-stroke {
+      stroke: #ffffff;
     }
   }
 

@@ -48,18 +48,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .container {
-    max-width: 994px;
-    width: 100%;
-    height: 84px;
-    padding-left: 32px;
-    padding-right: 32px;
-    margin: 0 auto;
+  .header {
+    border-bottom: 0.5px solid #DBDBDB;
+  }
 
+  .container {
+    height: 80px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding-top: 32px;
+    align-items: center;
   }
 
   .overlay {
@@ -72,10 +70,6 @@ export default {
 
   .close-menu {
     display: none;
-  }
-
-  .nav {
-    padding-top: 10px;
   }
 
   .menu {
@@ -125,6 +119,8 @@ export default {
       left: 0;
       top: 0;
       z-index: 100;
+
+      border-bottom: none;
     }
 
     .container {
@@ -135,8 +131,9 @@ export default {
       transform: translateX(-100%);
 
       flex-flow: column nowrap;
-      background: #ffffff;
       justify-content: flex-start;
+      align-items: flex-start;
+
       height: 100%;
       width: 167px;
       padding-top: 24px;
@@ -144,6 +141,7 @@ export default {
       padding-right: 12px;
       padding-bottom: 32px;
 
+      background: #ffffff;
       transition: transform 0.2s linear;
     }
 
