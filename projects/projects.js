@@ -1,32 +1,56 @@
 export default [
   {
     id: 1,
-    name: 'Mixfit1',
-    text: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices"
+    title: "Mixfit1",
+    about: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices",
+    whatWeDo: "Mobile app with digital personal assistant built with React Native, Ruby on Rails backend and Raspberry Pi interface for machine",
+    budget: "$150 000",
+    live: "gomixfit.com",
+    image: '../images/mixfit.png'
   },
   {
     id: 2,
-    name: 'Mixfit2',
-    text: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices"
+    title: 'Mixfit2',
+    about: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices",
+    whatWeDo: "Mobile app with digital personal assistant built with React Native, Ruby on Rails backend and Raspberry Pi interface for machine",
+    budget: "$150 000",
+    live: "gomixfit.com",
+    image: '../images/mixfit.png'
   },
   {
     id: 3,
-    name: 'Mixfit3',
-    text: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices"
+    title: 'Mixfit3',
+    about: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices",
+    whatWeDo: "Mobile app with digital personal assistant built with React Native, Ruby on Rails backend and Raspberry Pi interface for machine",
+    budget: "$150 000",
+    live: "gomixfit.com",
+    image: '../images/mixfit.png'
   },
   {
     id: 4,
-    name: 'Mixfit4',
-    text: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices"
+    title: 'Mixfit4',
+    about: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices",
+    whatWeDo: "Mobile app with digital personal assistant built with React Native, Ruby on Rails backend and Raspberry Pi interface for machine",
+    budget: "$150 000",
+    live: "gomixfit.com",
+    image: '../images/mixfit.png'
   },
   {
     id: 5,
-    name: 'Mixfit5',
-    text: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices"
+    title: 'Mixfit5',
+    about: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices",
+    whatWeDo: "Mobile app with digital personal assistant built with React Native, Ruby on Rails backend and Raspberry Pi interface for machine",
+    budget: "$150 000",
+    live: "gomixfit.com",
+    image: '../images/mixfit.png'
   },
   {
     id: 6,
-    name: 'Mixfit6',
-    text: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices"
+    title: 'Mixfit6',
+    about: "System that analyses user's diet and includes physical device that cooks cocktail of missing nutrients. Data collected from wearable devices",
+    whatWeDo: "Mobile app with digital personal assistant built with React Native, Ruby on Rails backend and Raspberry Pi interface for machine",
+    budget: "$150 000",
+    live: "gomixfit.com",
+    image: '../images/mixfit.png'
   }
 ]

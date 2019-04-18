@@ -6,7 +6,7 @@
         .container
           h2.about__title
             | Who we are
-          .who-we-are__text
+          .who-we-are__text.text
             | 42 was built to be different. An alternative to the large agency. We are a collective of design-obsessed digital junkies, based in Rostov-on-Don. Our focus is to create new interactive experiences for users; striking the perfect balance between usability and aesthetic. We seek to push creative and developmental boundaries, while bringing ambitious ideas to life.
       .what-we-do
         .container
@@ -41,7 +41,7 @@
         .container
           h2.about__title
             | How we work
-          .how-we-work__text
+          .how-we-work__text.text
             | We believe that great design is made better by great code; a marriage of crafts resulting in an original experience for the greater good. We are story-tellers at heart because that is the human language, and we strive to bring your story to life in a truly unique way with a strong sense of identity. We embrace the unknown and have expertise across a wide range of cutting-edge web technologies, frameworks, and tools.
 </template>
 
@@ -92,7 +92,8 @@ export default {
     border-bottom: 0.5px solid #DBDBDB;
   }
 
-  .who-we-are__text {
+  .text {
+    font-weight: lighter;
     font-size: 21px;
     line-height: 40px;
     letter-spacing: 0.01em;
@@ -116,6 +117,7 @@ export default {
   .what-we-do__items {
     padding-left: 0;
     list-style: none;
+    font-weight: lighter;
   }
 
   .what-we-do__list-title {
@@ -137,12 +139,6 @@ export default {
   .how-we-work {
     padding-top: 72px;
     padding-bottom: 103px;
-  }
-
-  .how-we-work__text {
-    font-size: 21px;
-    line-height: 40px;
-    letter-spacing: 0.01em;
   }
 
   @media (max-width: 1024px) {
