@@ -1,4 +1,36 @@
-@import url('https://use.typekit.net/mzr0qwe.css');
+@font-face {
+  font-family: 'bio-sans';
+  src: url('~static/fonts/BioSans-Light.woff2') format('woff2'),
+      url('~static/fonts/BioSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bio-sans';
+  src: url('~static/fonts/BioSans-Regular.woff2') format('woff2'),
+      url('~static/fonts/BioSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bio-sans';
+  src: url('~static/fonts/BioSans-Bold.woff2') format('woff2'),
+      url('~static/fonts/BioSans-Bold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bio-sans';
+  src: url('~static/fonts/BioSans-SemiBold.woff2') format('woff2'),
+      url('~static/fonts/BioSans-SemiBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 
 body {
   margin: 0;

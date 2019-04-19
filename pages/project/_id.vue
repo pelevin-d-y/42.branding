@@ -22,7 +22,7 @@
         .live
           .subtitle
             | Live
-          .live-link
+          a(:href="`https://${project.live}`").live-link
             | {{ project.live }}
     .project-image
       img(:src="project.image")
@@ -87,8 +87,10 @@ export default {
     font-size: 21px;
     line-height: 40px;
     letter-spacing: 0.01em;
+    font-weight: lighter;
 
     color: #3431DC;
+    text-decoration: none;
   }
 
   .about {
