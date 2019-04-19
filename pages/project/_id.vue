@@ -3,17 +3,17 @@
     .container
       h1.title
         | {{ project.title }}
-      .about
+      .block
         .subtitle
           | About project
         .text
           | {{ project.about }}
-      .what-we-do
+      .block
         .subtitle
           | What we do
         .text
           | {{ project.whatWeDo }}
-      .footer
+      .block.footer
         .budget
           .subtitle
             | Budget
@@ -60,6 +60,8 @@ export default {
   }
 
   .title {
+    margin-bottom: 12px;
+
     font-size: 40px;
     line-height: 56px;
     letter-spacing: 0.01em;
@@ -93,16 +95,9 @@ export default {
     text-decoration: none;
   }
 
-  .about {
-    padding-top: 32px;
-  }
-
-  .what-we-do {
-    padding-top: 56px;
-  }
-
-  .footer {
-    padding-top: 54px;
+  .block {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .project-image {
@@ -116,6 +111,7 @@ export default {
   .footer {
     display: flex;
     flex-flow: row wrap;
+    padding-top: 40px
   }
 
   .budget,
