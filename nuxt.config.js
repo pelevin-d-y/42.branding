@@ -27,20 +27,28 @@ export default {
   ** Global CSS
   */
   css: [
-    'assets/main.scss',
+    './assets/main.scss',
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {src: '~plugins/vee-validate.js', ssr: true}
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/style-resources'
   ],
+
+  styleResources: {
+    scss: [
+      './assets/variables.scss'
+    ]
+  },
 
   /*
   ** Build configuration
@@ -68,7 +76,7 @@ export default {
       });
     },
 
-    vendor: ['normalize.css']
+    vendor: ['normalize.css', 'vee-validate']
   },
 
 }

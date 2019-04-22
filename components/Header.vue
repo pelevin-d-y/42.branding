@@ -8,13 +8,13 @@
         Logo
       nav.nav
         ul.menu
-          li.menu-item
+          li.menu-item(@click="toggleMenu")
             router-link.nav-link(to="/projects")
               | Projects
-          li.menu-item
+          li.menu-item(@click="toggleMenu")
             router-link.nav-link(to="/about")
               | About
-          li.menu-item
+          li.menu-item(@click="toggleMenu")
             router-link.nav-link(to="/Contact")
               | Contact
       .close-menu(@click="toggleMenu")
@@ -41,6 +41,7 @@ export default {
 
   methods: {
     toggleMenu() {
+      console.log('aaaaaa')
       this.openMenu = !this.openMenu
     }
   }

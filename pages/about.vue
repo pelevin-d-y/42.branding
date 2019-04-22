@@ -1,5 +1,5 @@
 <template lang="pug">
-  .about
+  .page-gradient.about
     .gradient
     .content
       .who-we-are
@@ -53,24 +53,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .about {
-    display: flex;
-    flex-flow: row nowrap;
-    min-height: calc(100vh - 80px);
-
-    color: rgba(0, 1, 5, 0.6);
-  }
-
-  .gradient {
-    width: 23.6%;
-
-    background: linear-gradient(180deg, #3431DC 0%, #615EEE 100%);
-  }
-
-  .content {
-    width: 76.4%;
-  }
-
   .container {
     max-width: 911px;
     padding-left: 86px;
