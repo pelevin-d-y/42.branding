@@ -3,39 +3,42 @@
     .container
       h1.title
         | {{ project.title }}
-      .block
+      .block(v-for="text in project.textBlocks" :key="text.title")
         .subtitle
-          | About project
+          | {{ text.title }}
         .text
-          | {{ project.about }}
-      .block
-        .subtitle
-          | What we do
-        .text
-          | {{ project.whatWeDo }}
-      .block.footer
-        .budget
+          | {{ text.text }}
+
+      .block.project-footer
+        .project-footer__left
           .subtitle
-            | Budget
-          .text
-            | {{ project.budget }}
-        .live
+            | Services
+          .text(v-for="service in project.services")
+            | {{ service }}
+        .project-footer__right
           .subtitle
             | Live
-          a(:href="`https://${project.live}`").live-link
+          a.live-link(:href="`https://${project.live}`")
             | {{ project.live }}
-    .project-image
-      img(:src="project.image")
+    .project-cover-image
+      img(:src="`../images/${project.name}/coverImage.png`")
+    .project-images
+      projectImages(:images="project.images" :name="project.name")
 
 
 </template>
 
 <script>
 import projects from '~/projects/projects'
+import projectImages from '~/components/projectImages'
 
 export default {
   name: 'project',
   layout: 'item-page',
+
+  components: {
+    projectImages
+  },
 
   data() {
     return {
@@ -55,7 +58,7 @@ export default {
   }
 
   .container {
-    max-width: 707px;
+    max-width: 716px;
     width: 100%;
   }
 
@@ -96,27 +99,38 @@ export default {
   }
 
   .block {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
-  .project-image {
+  .project-cover-image {
     margin-top: 106px;
   }
 
-  .project-image img {
+  .project-cover-image img {
     width: 100%;
   }
 
-  .footer {
+  .project-footer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     padding-top: 40px
   }
 
-  .budget,
-  .live {
+  .project-footer__left {
+    max-width: 372px;
+    width: 100%;
+  }
+
+  .project-footer__right {
+    max-width: 256px;
     width: 50%;
+  }
+
+  .project-images {
+    overflow: hidden;
+    padding-top: calc(88/1152*100vw);
+    padding-bottom: 60px;
   }
 
   @media (max-width: 768px) {
@@ -127,6 +141,20 @@ export default {
     .text {
       font-size: 18px;
       line-height: 32px;
+    }
+
+    .project-image {
+      margin-top: 60px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .project-footer {
+      flex-flow: column nowrap;
+    }
+
+    .project-footer__right {
+      padding-top: 60px;
     }
   }
 </style>

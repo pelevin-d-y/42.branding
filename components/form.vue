@@ -45,10 +45,6 @@
 
 <script>
 export default {
-  mounted() {
-    console.log('this.$validator', this.$validator, this.errors)
-  },
-
   data() {
     return {
       formIsFull: false,
