@@ -84,7 +84,7 @@ export default {
 .form {
   &__row {
     position: relative;
-    margin-bottom: 48px;
+    margin-bottom: 64px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -216,6 +216,8 @@ export default {
 .form__row {
   display: flex;
   flex-flow: row wrap;
+
+
 }
 
 .input-wrapper {
@@ -281,7 +283,7 @@ export default {
 
 @media (max-width: 768px) {
   .form__row {
-    margin-bottom: 46px;
+    margin-bottom: 36px;
     flex-direction: column;
   }
 
@@ -290,7 +292,7 @@ export default {
   }
 
   .input-wrapper__right {
-    margin-top: 46px;
+    margin-top: 36px;
     margin-left: 0;
   }
 

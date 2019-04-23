@@ -132,8 +132,12 @@ export default {
   }
 
   @media (max-width: 768px) {
-    .who-we-are {
+    .who-we-are,
+    .what-we-do,
+    .how-we-work
+     {
       padding-top: 60px;
+      padding-bottom: 60px;
     }
 
     .about__title {

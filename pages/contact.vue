@@ -7,6 +7,8 @@
           | This portfolio is a glimpse at the way we design and prototype in code. Design something familiar, program it to do something unexpected, make sure people feel something. Available for the right project.
       .form-container
         .container
+          .title
+            | Want chat with us?
           Form
       .mail
         .container
@@ -54,6 +56,17 @@ export default {
     border-bottom: 0.5px solid #DBDBDB;
   }
 
+  .title {
+    margin-bottom: 56px;
+
+    font-size: 40px;
+    line-height: 56px;
+    letter-spacing: 0.01em;
+    font-weight: bold;
+
+    color: #000105;
+  }
+
   .mail {
     padding-top: 72px;
     padding-bottom: 103px;
@@ -80,6 +93,12 @@ export default {
   }
 
   @media (max-width: 768px) {
+    .title {
+      margin-bottom: 36px;
+      font-size: 31px;
+      line-height: 46px;
+    }
+
     .text {
       padding-top: 60px;
       padding-bottom: 60px;
