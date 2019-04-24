@@ -15,10 +15,6 @@ export default {
     name: String
   },
 
-  mounted() {
-    console.log()
-  },
-
   computed: {
     splitImages() {
       let chunk = 3;

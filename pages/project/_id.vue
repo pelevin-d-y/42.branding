@@ -4,7 +4,7 @@
       h1.title
         | {{ project.title }}
       .block(v-for="text in project.textBlocks" :key="text.title")
-        .subtitle
+        .subtitle(v-if="text.title")
           | {{ text.title }}
         .text
           | {{ text.text }}
@@ -18,10 +18,10 @@
         .project-footer__right
           .subtitle
             | Live
-          a.live-link(:href="`https://${project.live}`")
+          a.live-link(:href="`https://${project.live}`" target="_blank")
             | {{ project.live }}
-    .project-images
-      projectImages(v-if="project.images" :images="project.images" :name="project.name")
+    .project-images(v-if="project.images.length")
+      projectImages(:images="project.images" :name="project.name")
 
 </template>
 

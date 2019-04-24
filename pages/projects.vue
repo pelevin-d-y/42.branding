@@ -83,6 +83,18 @@ export default {
           title: 'Matter.online',
           subtitle: 'Design and Development',
           src: require('~/assets/images/yourgratefulnation.jpg')
+        },
+        {
+          index: 7,
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
+          src: require('~/assets/images/yourgratefulnation.jpg')
+        },
+        {
+          index: 8,
+          title: 'Matter.online',
+          subtitle: 'Design and Development',
+          src: require('~/assets/images/yourgratefulnation.jpg')
         }
       ],
       buttonsBlocked: false,
