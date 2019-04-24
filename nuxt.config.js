@@ -1,6 +1,8 @@
 import pkg from './package'
 import projects from './projects/projects'
 
+const faviconPath = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/42.branding/favicon.ico' : '/favicon.ico'
+
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/42.branding/'
@@ -21,7 +23,7 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: faviconPath }
     ]
   },
 
