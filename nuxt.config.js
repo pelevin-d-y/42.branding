@@ -1,5 +1,11 @@
 import pkg from './package'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/<repository-name>/'
+  }
+} : {}
+
 export default {
   mode: 'universal',
 
@@ -79,4 +85,5 @@ export default {
     vendor: ['normalize.css', 'vee-validate']
   },
 
+  ...routerBase
 }
