@@ -85,5 +85,5 @@ export default {
     vendor: ['normalize.css', 'vee-validate']
   },
 
-  ...routerBase
+  ...routerBase,
 }

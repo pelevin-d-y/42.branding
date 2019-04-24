@@ -1,7 +1,7 @@
 <template lang="pug">
   .images
     .column(v-for="column in splitImages")
-      .image(v-for="image in column" :style="{backgroundImage: `url(../images/${name}/${image}.png)`}" :key="column.image")
+      .image(v-for="image in column" :style="{backgroundImage: `url(${getBackgrounImage(image)}`}" :key="column.image")
 </template>
 
 <script>
@@ -10,6 +10,10 @@ export default {
   props: {
     images: Array,
     name: String
+  },
+
+  mounted() {
+    console.log()
   },
 
   computed: {
@@ -27,6 +31,12 @@ export default {
       }, []);
 
       return chunked;
+    }
+  },
+
+  methods: {
+    getBackgrounImage(image) {
+      return require(`~/static/images/${this.name}/${image}.png`)
     }
   }
 }
