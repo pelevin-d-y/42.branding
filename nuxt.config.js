@@ -1,4 +1,5 @@
 import pkg from './package'
+import projects from './projects/projects'
 
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
@@ -86,4 +87,7 @@ export default {
   },
 
   ...routerBase,
+  generate: {
+    routes: projects.map((project) => `/project/${project.id}`)
+  }
 }
