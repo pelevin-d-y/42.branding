@@ -21,7 +21,7 @@
           a.live-link(:href="`https://${project.live}`")
             | {{ project.live }}
     .project-cover-image
-      img(:src="`../images/${project.name}/coverImage.png`")
+      img(:src="getCoverImage(project.name)")
     .project-images
       projectImages(:images="project.images" :name="project.name")
 
@@ -48,6 +48,12 @@ export default {
 
   created: function() {
     this.project = projects.filter(project => project.id === Number(this.$route.params.id))[0]
+  },
+
+  methods: {
+    getCoverImage(name) {
+      return require(`~/static/images/${name}/coverImage.png`)
+    }
   }
 }
 </script>
