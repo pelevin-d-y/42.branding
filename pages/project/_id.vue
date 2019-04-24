@@ -20,11 +20,8 @@
             | Live
           a.live-link(:href="`https://${project.live}`")
             | {{ project.live }}
-    .project-cover-image
-      img(:src="getCoverImage(project.name)")
     .project-images
-      projectImages(:images="project.images" :name="project.name")
-
+      projectImages(v-if="project.images" :images="project.images" :name="project.name")
 
 </template>
 
@@ -40,19 +37,15 @@ export default {
     projectImages
   },
 
-  data() {
+  asyncData (context) {
     return {
-      project: null
+      project: projects.filter(project => project.id === Number(context.route.params.id))[0]
     }
   },
 
-  created: function() {
-    this.project = projects.filter(project => project.id === Number(this.$route.params.id))[0]
-  },
-
-  methods: {
-    getCoverImage(name) {
-      return require(`~/static/images/${name}/coverImage.png`)
+  data() {
+    return {
+      project: null
     }
   }
 }
@@ -109,14 +102,6 @@ export default {
     padding-bottom: 30px;
   }
 
-  .project-cover-image {
-    margin-top: 106px;
-  }
-
-  .project-cover-image img {
-    width: 100%;
-  }
-
   .project-footer {
     display: flex;
     flex-flow: row nowrap;
@@ -135,8 +120,6 @@ export default {
 
   .project-images {
     overflow: hidden;
-    padding-top: calc(88/1152*100vw);
-    padding-bottom: 60px;
   }
 
   @media (max-width: 768px) {

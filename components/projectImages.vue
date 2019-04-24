@@ -1,7 +1,10 @@
 <template lang="pug">
-  .images
-    .column(v-for="column in splitImages")
-      .image(v-for="image in column" :style="{backgroundImage: `url(${getBackgrounImage(image)}`}" :key="column.image")
+  .wrapper
+    .project-cover-image
+      img(:src="getCoverImage()")
+    .images
+      .column(v-for="column in splitImages")
+        .image(v-for="image in column" :style="{backgroundImage: `url(${getBackgrounImage(image)}`}" :key="column.image")
 </template>
 
 <script>
@@ -18,9 +21,7 @@ export default {
 
   computed: {
     splitImages() {
-
       let chunk = 3;
-      // return this.images
       let chunked = this.images.reduce((accumulator, currentValue) => {
         if ((accumulator.length == 0) || (accumulator[accumulator.length  -  1].length >= chunk)) {
           accumulator.push([])
@@ -37,12 +38,24 @@ export default {
   methods: {
     getBackgrounImage(image) {
       return require(`~/static/images/${this.name}/${image}.png`)
+    },
+
+    getCoverImage() {
+      return require(`~/static/images/${this.name}/coverImage.png`)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.project-cover-image {
+  margin-top: 106px;
+}
+
+.project-cover-image img {
+  width: 100%;
+}
+
 .images {
   position: relative;
   left: -10%;
@@ -51,6 +64,8 @@ export default {
   flex-flow: row nowrap;
   justify-content: space-between;
   width: 120%;
+  padding-top: calc(88/1152*100vw);
+  padding-bottom: 60px;
 }
 
 .image {
