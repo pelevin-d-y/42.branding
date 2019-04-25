@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
   .project {
-    padding-top: 16px;
+    padding-top: 120px;
   }
 
   .container {
@@ -123,9 +123,6 @@ export default {
   }
 
   @media (max-width: 768px) {
-    .project {
-      padding-top: 65px;
-    }
 
     .text {
       font-size: 18px;

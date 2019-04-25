@@ -166,7 +166,7 @@ export default {
     }
 
     &:hover {
-      background-color: #ffa63e;
+      background-color: #3431DC;
     }
 
     &:active {
@@ -233,7 +233,7 @@ export default {
 
 .form__button:hover {
   border: 2px solid $black;
-  color: $black;
+  color: $white;
 
   &::before {
     border-top: 8px solid $black;

@@ -1,6 +1,6 @@
 <template lang="pug">
   .page.home
-    // Tetris
+    Tetris
     .container
       .logo-wrapper
         .logo

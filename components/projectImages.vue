@@ -33,7 +33,7 @@ export default {
 
   methods: {
     getBackgrounImage(image) {
-      return require(`~/static/images/${this.name}/${image}.png`)
+      return require(`~/static/images/${this.name}/${image}`)
     },
 
     getCoverImage() {
@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .project-cover-image {
   margin-top: 106px;
 }
@@ -85,5 +86,44 @@ export default {
 
 .column:nth-child(5) {
   margin-top: calc(112/1152*100vw);
+}
+
+@media (min-width: 1200px) {
+  .images {
+    max-width: 1220px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+   .column:nth-child(2) {
+    margin-top: 25px;
+  }
+
+  .column:nth-child(3) {
+    margin-top: 100px;
+  }
+
+  .column:nth-child(5) {
+    margin-top: 90px;
+  }
+
+  .image {
+    width: 216px;
+    height: 383px;
+    background-size: contain;
+    margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .project-cover-image {
+    margin-top: 10vw;
+  }
 }
 </style>

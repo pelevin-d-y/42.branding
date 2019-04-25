@@ -24,7 +24,7 @@ export default [
       'Blockchain integration'
     ],
     live: "gomixfit.com",
-    images: ["image-1", "image-2", "image-3" ,"image-4", "image-5", "image-6", "image-7", "image-8", "image-9", "image-10", "image-11", "image-12", "image-13", "image-14", "image-15"]
+    images: ["image-1.png", "image-2.png", "image-3.png" ,"image-4.png", "image-5.png", "image-6.png", "image-7.png", "image-8.png", "image-9.png", "image-10.png", "image-11.png", "image-12.png", "image-13.png", "image-14.png", "image-15.png"]
   },
   {
     id: 2,
@@ -111,7 +111,7 @@ export default [
   {
     id: 6,
     title: 'Chisel',
-    name: 'mixfit',
+    name: 'chisel',
     textBlocks: [
       {
         title: "What",

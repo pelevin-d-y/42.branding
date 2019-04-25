@@ -58,6 +58,9 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
+    padding-left: calc(112/1152*100%);
+    padding-right: calc(112/1152*100%);
   }
 
   .overlay {
@@ -95,12 +98,12 @@ export default {
     transition: color 0.1s linear;
 
     &:hover {
-      color: #DBDBDB;
+      color: #3431DC;
     }
   }
 
   .nuxt-link-active {
-    color: #DBDBDB;
+    color: #3431DC;
   }
 
   .burger-path-1,

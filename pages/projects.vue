@@ -50,50 +50,50 @@ export default {
       slides: [
         {
           index: 1,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Mixfit',
+          subtitle: 'Full stack develepment',
           src: require('~/assets/images/digdeep.jpg')
         },
         {
           index: 2,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Matter',
+          subtitle: 'Full stack develepment',
           src: require('~/assets/images/dragondrop.jpg')
         },
         {
           index: 3,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'IAMIP',
+          subtitle: 'Frontend development',
           src: require('~/assets/images/grandlukto.jpg')
         },
         {
           index: 4,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Hammer for Mac',
+          subtitle: 'Development',
           src: require('~/assets/images/ready_at_dawn.jpg')
         },
         {
           index: 5,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Forge',
+          subtitle: 'Full stack develepment',
           src: require('~/assets/images/statebird1.jpg')
         },
         {
           index: 6,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Chisel',
+          subtitle: 'Frontend development',
           src: require('~/assets/images/yourgratefulnation.jpg')
         },
         {
           index: 7,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Statebird creative',
+          subtitle: 'Full stack develepment',
           src: require('~/assets/images/yourgratefulnation.jpg')
         },
         {
           index: 8,
-          title: 'Matter.online',
-          subtitle: 'Design and Development',
+          title: 'Uptime connect',
+          subtitle: 'Full stack develepment',
           src: require('~/assets/images/yourgratefulnation.jpg')
         }
       ],
@@ -285,11 +285,11 @@ export default {
     }
 
     &.cursorLeft {
-      cursor: url('~assets/images/left.svg'), auto;
+      // cursor: url('~assets/images/left.svg'), auto;
     }
 
     &.cursorRight {
-      cursor: url('~assets/images/right.svg'), auto;
+      // cursor: url('~assets/images/right.svg'), auto;
     }
   }
 
@@ -398,11 +398,11 @@ export default {
       justify-content: center;
       align-items: center;
 
-      &:hover {
-        img {
-          box-shadow: 0 0 6px 0 rgba(0,0,0,0.07), 0 6px 6px 0 rgba(0,0,0,0.14);
-        }
-      }
+      // &:hover {
+      //   img {
+      //     box-shadow: 0 0 6px 0 rgba(0,0,0,0.07), 0 6px 6px 0 rgba(0,0,0,0.14);
+      //   }
+      // }
     }
 
     &.previous {
@@ -419,8 +419,6 @@ export default {
   .slider-item img {
     height: 100%;
     width: 100%;
-    box-shadow: 0 0 2px 0 rgba(0,0,0,0.07), 0 2px 2px 0 rgba(0,0,0,0.14);
-    border-radius: 5px;
     transition: box-shadow 0.5s ease;
   }
 
@@ -437,19 +435,19 @@ export default {
 
   .slider-item__name {
     align-self: flex-start;
+    margin-bottom: 8px;
 
     letter-spacing: 0.01em;
     color: #000105;
     font-size: 40px;
     font-weight: bold;
-    text-transform: uppercase;
     line-height: 46px;
     transition: border-color 0.3s ease;
   }
 
   .slider-item__description {
     align-self: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     font-style: normal;
     font-weight: normal;
