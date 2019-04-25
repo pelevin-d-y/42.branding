@@ -59,6 +59,7 @@ export default {
   .container {
     max-width: 716px;
     width: 100%;
+    padding-bottom: 106px;
   }
 
   .title {
@@ -123,7 +124,6 @@ export default {
   }
 
   @media (max-width: 768px) {
-
     .text {
       font-size: 18px;
       line-height: 32px;

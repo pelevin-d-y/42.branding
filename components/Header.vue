@@ -103,7 +103,7 @@ export default {
   }
 
   .nuxt-link-active {
-    color: #3431DC;
+    color: #DBDBDB;
   }
 
   .burger-path-1,

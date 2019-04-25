@@ -45,10 +45,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.project-cover-image {
-  margin-top: 106px;
-}
-
 .project-cover-image img {
   width: 100%;
 }
