@@ -1,12 +1,12 @@
 <template lang="pug">
-  .page.home
-    //- Tetris(v-if="isTetrisActive")
+  .page.home(ref="home")
+    Tetris(v-if="isTetrisActive")
     .container
       .logo-wrapper
         .logo
-          .logo-image
+          .logo-image(ref="logo")
             Logo
-          .logo-shadow
+          .logo-shadow(ref="logoShadow")
             LogoShadow
         .logo-text
           | We create the face for the interact
@@ -37,16 +37,33 @@ export default {
 
   data() {
     return {
-      isTetrisActive: true
+      isTetrisActive: false,
+      mouse: {
+        X: 0,
+        Y: 0,
+      },
+      paralaxCenter: {
+        X: 0,
+        Y: 0
+      },
     }
   },
 
   mounted() {
-    window.addEventListener('resize', this.onResize)
+    if (process.browser) {
+      window.addEventListener('resize', this.onResize)
+       this.onResize()
+      if (window.innerWidth > 768) {
+        this.$refs.home.addEventListener('mousemove', this.mouseMove)
+        this.paralaxCenter.X = this.$refs.logo.getBoundingClientRect().left + this.$refs.logo.offsetWidth/2
+        this.paralaxCenter.Y = this.$refs.logo.getBoundingClientRect().top + this.$refs.logo.offsetHeight/2
+      }
+    }
   },
 
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize)
+    this.$refs.home.removeEventListener('mousemove', this.mouseMove)
   },
 
   methods: {
@@ -56,6 +73,31 @@ export default {
       } else {
         this.isTetrisActive = true
       }
+    },
+
+    mouseMove(evt) {
+      this.mouse.X = evt.clientX
+      this.mouse.Y = evt.clientY
+
+      const leftLogo = this.mouse.X - this.paralaxCenter.X
+
+      this.$refs.logo.style.top = -this.getOffset(this.mouse.Y - this.paralaxCenter.Y) + 'px'
+      this.$refs.logo.style.left = -this.getOffset(this.mouse.X - this.paralaxCenter.X) + 'px'
+      this.$refs.logoShadow.style.top = this.getOffset(this.mouse.Y - this.paralaxCenter.Y) + 'px'
+      this.$refs.logoShadow.style.left = this.getOffset(this.mouse.X - this.paralaxCenter.X) + 'px'
+    },
+
+    getOffset(currentOffset) {
+      const maxOffset = 35;
+        if (Math.abs(currentOffset)*0.05 > maxOffset) {
+          if (currentOffset < 0) {
+            return -maxOffset
+          } else {
+            return maxOffset
+          }
+        } else {
+          return currentOffset * 0.05
+        }
     }
   }
 }
@@ -136,8 +178,8 @@ export default {
 
   .logo-shadow {
     position: absolute;
-    top: 57px;
-    left: 78px;
+    top: 0;
+    left: 0;
     z-index: 9;
   }
 
