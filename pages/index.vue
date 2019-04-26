@@ -1,6 +1,6 @@
 <template lang="pug">
   .page.home
-    Tetris
+    //- Tetris(v-if="isTetrisActive")
     .container
       .logo-wrapper
         .logo
@@ -33,6 +33,30 @@ export default {
     Logo,
     LogoShadow,
     Tetris
+  },
+
+  data() {
+    return {
+      isTetrisActive: true
+    }
+  },
+
+  mounted() {
+    window.addEventListener('resize', this.onResize)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
+
+  methods: {
+    onResize() {
+      if (window.innerWidth <= 768) {
+        this.isTetrisActive = false
+      } else {
+        this.isTetrisActive = true
+      }
+    }
   }
 }
 </script>

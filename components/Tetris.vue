@@ -23,22 +23,12 @@ export default {
 
   mounted() {
     if (process.browser) {
-      this.tetris = this.$refs.tetris
-      this.interval = setInterval(() => {
-        this.getLeftOffset()
-        const el = this.$refs[`el-${this.getRandomInt(this.types.length - 1)}`][0].cloneNode(true)
-        el.style.transform = `rotate(${this.transform[this.getRandomInt(this.transform.length)]}deg)`;
-        this.tetris.appendChild(el)
-        setTimeout(() => {
-          this.lastLeftOffset = this.leftOffset
-          el.style.left = this.leftOffset + 'px'
-          el.classList.add('active')
-        }, 1000)
-        setTimeout(() => {
-          el.remove()
-        }, 15000)
-
-      }, 2300)
+      if (window.innerWidth >= 768) {
+        this.tetris = this.$refs.tetris
+        this.interval = setInterval(() => {
+          this.createTetrisElem()
+        }, 2300)
+      }
     }
   },
 
@@ -47,6 +37,21 @@ export default {
   },
 
   methods: {
+    createTetrisElem() {
+      this.getLeftOffset()
+      const el = this.$refs[`el-${this.getRandomInt(this.types.length - 1)}`][0].cloneNode(true)
+      el.style.transform = `rotate(${this.transform[this.getRandomInt(this.transform.length)]}deg)`;
+      this.tetris.appendChild(el)
+      setTimeout(() => {
+        this.lastLeftOffset = this.leftOffset
+        el.style.left = this.leftOffset + 'px'
+        el.classList.add('active')
+      }, 1000)
+      setTimeout(() => {
+        el.remove()
+      }, 15000)
+    },
+
     getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max)) + 1;
     },
