@@ -23,12 +23,10 @@ export default {
 
   mounted() {
     if (process.browser) {
-      if (window.innerWidth >= 768) {
-        this.tetris = this.$refs.tetris
-        this.interval = setInterval(() => {
-          this.createTetrisElem()
-        }, 2300)
-      }
+      this.tetris = this.$refs.tetris
+      this.interval = setInterval(() => {
+        this.createTetrisElem()
+      }, 2300)
     }
   },
 
