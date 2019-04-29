@@ -6,14 +6,14 @@
         v-for="dot, i in slides")
       .slider-dots__dot.active(:style="{width: oneDotWidth / slides.length + 'px', transform: 'translateX(' + (oneDotWidth / slides.length * slideIndex) + 'px)'}")
     .slider-navigation
-      .slider__btn-left(@click="prev(slides)")
+      .slider__btn-left(@click="onSlide(prev, slides)")
         sliderBtnLeft
       .slider__digits
         span.slider__digits-current
           | {{ slideIndex + 1 }} /
         span.slider__digits-length
           |  {{ slides.length }}
-      .slider__btn-right(@click="next(slides)")
+      .slider__btn-right(@click="onSlide(next, slides)")
         sliderBtnRight
     .slider-container(@click="sidesClick" ref="container", :class="{'cursorLeft': cursorLeft, 'cursorRight': cursorRight}")
       .slider(ref="slider")
@@ -52,55 +52,55 @@ export default {
           index: 1,
           title: 'Mixfit',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/digdeep.jpg')
+          src: require('~/assets/images/Mixfit.png')
         },
         {
           index: 2,
           title: 'Matter',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/dragondrop.jpg')
+          src: require('~/assets/images/matter.jpg')
         },
         {
           index: 3,
           title: 'IAMIP',
           subtitle: 'Frontend development',
-          src: require('~/assets/images/grandlukto.jpg')
+          src: require('~/assets/images/iMap.png')
         },
         {
           index: 4,
           title: 'Hammer for Mac',
           subtitle: 'Development',
-          src: require('~/assets/images/ready_at_dawn.jpg')
+          src: require('~/assets/images/hammer.jpg')
         },
         {
           index: 5,
           title: 'Forge',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/statebird1.jpg')
+          src: require('~/assets/images/forge.jpg')
         },
         {
           index: 6,
           title: 'Chisel',
           subtitle: 'Frontend development',
-          src: require('~/assets/images/yourgratefulnation.jpg')
+          src: require('~/assets/images/chisel.jpg')
         },
         {
           index: 7,
           title: 'Statebird creative',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/yourgratefulnation.jpg')
+          src: require('~/assets/images/statebird.jpg')
         },
         {
           index: 8,
           title: 'Uptime connect',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/yourgratefulnation.jpg')
+          src: require('~/assets/images/uptime.jpg')
         },
         {
           index: 9,
           title: 'Bitcannery',
           subtitle: 'Blockchain',
-          src: require('~/assets/images/yourgratefulnation.jpg')
+          src: require('~/assets/images/bitcannery.jpg')
         }
       ],
       buttonsBlocked: false,
@@ -134,6 +134,9 @@ export default {
         this.oneDotWidth = (window.getComputedStyle(this.$refs.dots).width).replace('px', '')
         this.slidesWidth = this.getSlidesWidth()
       }
+
+      const hash = Number(location.hash.substr(1))
+      hash && this.setSlide(hash - 1)
 
       window.addEventListener('keydown', this.slideOnKey)
       window.addEventListener('mousemove', this.changeCursorOnMove)
@@ -202,10 +205,9 @@ export default {
     onSlide (func, slides) {
       if (this.canSlide) {
         this.canSlide = false
-
         this.$refs.container.classList.add('slider-container--sliding')
         func(slides)
-
+        this.setHash()
         setTimeout(() => {
           this.canSlide = true
           this.$refs.container.classList.remove('slider-container--sliding')
@@ -237,7 +239,12 @@ export default {
       this.slideIndex = Math.max(this.slideIndex - 1, 0)
     },
 
+    setHash (hash) {
+      window.location.hash = hash + 1 || this.slideIndex + 1
+    },
+
     setSlide (i) {
+      this.setHash(i)
       this.slideIndex = i
     }
   }

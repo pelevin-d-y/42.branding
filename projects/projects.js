@@ -80,7 +80,7 @@ export default [
     name: 'hammer',
     textBlocks: [
       {
-        title: "What",
+        title: "",
         text: "Hammer is a web development tool that lets front-end developers write HTML, CSS & JS web builds more efficiently and quickly, and makes them easier to maintain, especially across larger builds that change frequently during development."
       }
     ],
@@ -97,7 +97,7 @@ export default [
     name: 'forge',
     textBlocks: [
       {
-        title: "What",
+        title: "",
         text: "Lightning Fast Web Hosting for Static Sites and Javascript Apps."
       },
     ],
@@ -114,7 +114,7 @@ export default [
     name: 'chisel',
     textBlocks: [
       {
-        title: "What",
+        title: "",
         text: "Chisel is the ultimate API-first headless CMS to add your arsenal of web development workflow tools. It is the most flexible, adaptable, customisable solution available. Whether you want it to work straight out of the box, or want to get down and dirty with the inner workings of the Parse Server backend or customise the Chisel client application, the choice is yours. The possibilities are endless. All we know is, this is the only CMS you're ever going to need."
       }
     ],
@@ -155,7 +155,7 @@ export default [
     name: 'uptime',
     textBlocks: [
       {
-        title: "What",
+        title: "",
         text: "It is a portal for elevator maintenance company. That portal provides service that tracks elevators condition, collects the statistics and informs service engineers about the incidents through the mobile application. Service engineers have maintenance checklists for each type of equipment. Checklists and checklist reports data is managed within administration panel."
       }
     ],
@@ -173,7 +173,7 @@ export default [
     name: 'bitcannery',
     textBlocks: [
       {
-        title: "What",
+        title: "",
         text: "BitCannery is the Ethereum-based dead-man-switch system. You save message to be delivered in case anything prevents you from using your Ethereum account. Then you check in every month to postpone delivery. As the message is free-form text and it's stored on Ethereum blockchain, where anyone has access to any data, system must employ a network of third-party 'key keepers', who hold encrypted parts of message so it isn't readable before the time. For this project we've designed the system, built all required smart contracts, implemented command-line apps for every system's role and researched options for hosting on blockchains other than Ethereum."
       }
     ],
