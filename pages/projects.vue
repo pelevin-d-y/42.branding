@@ -101,6 +101,12 @@ export default {
           title: 'Bitcannery',
           subtitle: 'Blockchain',
           src: require('~/assets/images/bitcannery.jpg')
+        },
+        {
+          index: 10,
+          title: 'Smartomato',
+          subtitle: 'Full stack develepment',
+          src: require('~/assets/images/smartomato.jpg')
         }
       ],
       buttonsBlocked: false,

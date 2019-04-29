@@ -185,5 +185,22 @@ export default [
     ],
     live: "bitcannery.net",
     images: []
+  },
+  {
+    id: 10,
+    title: 'Smartomato',
+    name: 'smartomato',
+    textBlocks: [
+      {
+        title: "",
+        text: "Smartomato a user friendly online ordering system for individual restaurants, multi-store chains, takeaways, cafes, convenience stores and franchises. We've developed bestpoke application for web and mobile devices on for this project. Google maps service has been used for taking geolocation coordinates and calculating the distance. On this project we got familiar with order logic. Its placement, cancellation and customization."
+      }
+    ],
+    services: [
+      'React.JS',
+      'Ruby-on-Rails',
+    ],
+    live: "smartomato.ru",
+    images: []
   }
 ]
