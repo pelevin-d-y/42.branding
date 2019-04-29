@@ -155,7 +155,7 @@ export default [
     name: 'uptime',
     textBlocks: [
       {
-        title: "",
+        title: "What",
         text: "It is a portal for elevator maintenance company. That portal provides service that tracks elevators condition, collects the statistics and informs service engineers about the incidents through the mobile application. Service engineers have maintenance checklists for each type of equipment. Checklists and checklist reports data is managed within administration panel."
       }
     ],
@@ -165,6 +165,25 @@ export default [
       'Ruby on Rails'
     ],
     live: "uptime.ac",
+    images: []
+  },
+  {
+    id: 9,
+    title: 'Bitcannery',
+    name: 'bitcannery',
+    textBlocks: [
+      {
+        title: "What",
+        text: "BitCannery is the Ethereum-based dead-man-switch system. You save message to be delivered in case anything prevents you from using your Ethereum account. Then you check in every month to postpone delivery. As the message is free-form text and it's stored on Ethereum blockchain, where anyone has access to any data, system must employ a network of third-party 'key keepers', who hold encrypted parts of message so it isn't readable before the time. For this project we've designed the system, built all required smart contracts, implemented command-line apps for every system's role and researched options for hosting on blockchains other than Ethereum."
+      }
+    ],
+    services: [
+      'Crypto system design',
+      'smart contracts',
+      'blockchain integration',
+      'client app'
+    ],
+    live: "bitcannery.net",
     images: []
   }
 ]

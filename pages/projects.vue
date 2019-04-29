@@ -95,6 +95,12 @@ export default {
           title: 'Uptime connect',
           subtitle: 'Full stack develepment',
           src: require('~/assets/images/yourgratefulnation.jpg')
+        },
+        {
+          index: 9,
+          title: 'Bitcannery',
+          subtitle: 'Blockchain',
+          src: require('~/assets/images/yourgratefulnation.jpg')
         }
       ],
       buttonsBlocked: false,
@@ -397,12 +403,6 @@ export default {
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-
-      // &:hover {
-      //   img {
-      //     box-shadow: 0 0 6px 0 rgba(0,0,0,0.07), 0 6px 6px 0 rgba(0,0,0,0.14);
-      //   }
-      // }
     }
 
     &.previous {
@@ -417,7 +417,6 @@ export default {
   }
 
   .slider-item img {
-    height: 100%;
     width: 100%;
     transition: box-shadow 0.5s ease;
   }

@@ -89,15 +89,16 @@ export default {
 
     getOffset(currentOffset) {
       const maxOffset = 35;
-        if (Math.abs(currentOffset)*0.03 > maxOffset) {
-          if (currentOffset < 0) {
-            return -maxOffset
-          } else {
-            return maxOffset
-          }
+      if (Math.abs(currentOffset)*0.03 > maxOffset) {
+        if (currentOffset < 0) {
+          return -maxOffset
         } else {
-          return currentOffset * 0.03
+          return maxOffset
         }
+      } else {
+        return currentOffset * 0.03
+      }
+      console.log('Azxnnwsadwqe')
     }
   }
 }
