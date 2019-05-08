@@ -15,7 +15,7 @@
             router-link.nav-link(to="/about")
               | About
           li.menu-item(@click="toggleMenu")
-            router-link.nav-link(to="/Contact")
+            router-link.nav-link(to="/contact")
               | Contact
       .close-menu(@click="toggleMenu")
         Close
@@ -50,6 +50,12 @@ export default {
 <style scoped lang="scss">
   .header {
     border-bottom: 0.5px solid #DBDBDB;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 100;
   }
 
   .container {

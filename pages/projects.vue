@@ -17,13 +17,16 @@
         sliderBtnRight
     .slider-container(@click="sidesClick" ref="container", :class="{'cursorLeft': cursorLeft, 'cursorRight': cursorRight}")
       .slider(ref="slider")
-        .slider-content(:style="{width: slidesWidth + 'px', transform: 'translate3d(' + translateOffset  + 'px,0,0)'}")
+        .slider-content(:class="sliderTransition && 'transition-enabled'" :style="{width: slidesWidth + 'px', transform: 'translate3d(' + translateOffset  + 'px,0,0)'}"
+          ref="sliderContent"
+          @mousedown="sliderScrollStart"
+          @mouseup="sliderScrollFinish")
           .slider-item(
             ref="slideWidth"
             v-for="slide, index in slides",
             :class="{'previous': index < slideIndex, 'active': index === slideIndex, 'next': index > slideIndex }")
             .slider-item__inner(@click="eventStopPropagation")
-              nuxt-link(:to="'/project/' + slide.index")
+              nuxt-link(:to="'/project/' + slide.index" draggable="false" :event="''")
                 .slider-item__name
                   | {{ slide.title }}
                 .slider-item__description
@@ -116,12 +119,21 @@ export default {
       slidesWidth: null,
       cursorLeft: false,
       cursorRight: false,
-      oneDotWidth: 0
+      oneDotWidth: 0,
+      scrollSlider: false,
+      mouseOffset: 0,
+      lastSliderMouseOffset: 0,
+      sliderTransition: true,
+
+
     }
   },
 
   computed: {
     translateOffset () {
+      if (this.scrollSlider) {
+        return this.mouseOffset
+      }
       return -(this.slidesWidth / this.slides.length) * this.slideIndex
     }
   },
@@ -252,6 +264,34 @@ export default {
     setSlide (i) {
       this.setHash(i)
       this.slideIndex = i
+    },
+
+    getSlederMouseOffset(evt) {
+      if (this.lastSliderMouseOffset) {
+        this.mouseOffset = (-(this.slidesWidth / this.slides.length) * this.slideIndex) - (this.lastSliderMouseOffset - evt.clientX)
+      } else {
+        this.lastSliderMouseOffset = evt.clientX
+      }
+    },
+
+    sliderScrollStart() {
+      this.sliderTransition = false
+      this.scrollSlider = true
+      this.mouseOffset = -(this.slidesWidth / this.slides.length) * this.slideIndex
+      this.$refs.sliderContent.addEventListener('mousemove', this.getSlederMouseOffset)
+    },
+
+    sliderScrollFinish() {
+      this.$refs.sliderContent.removeEventListener('mousemove', this.getSlederMouseOffset)
+
+      this.sliderTransition = true
+      this.scrollSlider = false
+      this.lastSliderMouseOffset = 0
+
+        // this.onSlide(this.next, this.slides)
+
+        // this.onSlide(this.prev, this.slides)
+
     }
   }
 }
@@ -268,7 +308,6 @@ export default {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    transform: translate3d(0, 0, 0);
   }
 
   .slider {
@@ -391,10 +430,14 @@ export default {
 
   .slider-content {
     display: block;
-    transition: transform 1s ease;
+    // transition: transform 1s ease;
     transform: translate3d(0, 0, 0);
     will-change: transform;
     white-space: nowrap;
+  }
+
+  .transition-enabled {
+    transition: transform 1s ease;
   }
 
   .slider-item {
@@ -430,6 +473,7 @@ export default {
   }
 
   .slider-item img {
+    pointer-events: none;
     width: 100%;
     transition: box-shadow 0.5s ease;
   }
@@ -440,6 +484,8 @@ export default {
     justify-content: center;
     align-items: center;
   }
+
+
 
   .slider-item__margin {
     margin-bottom: 40px;

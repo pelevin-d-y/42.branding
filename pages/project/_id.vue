@@ -1,5 +1,5 @@
 <template lang="pug">
-  .project
+  .page.project
     .container
       h1.title
         | {{ project.title }}

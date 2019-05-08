@@ -1,5 +1,5 @@
 <template lang="pug">
-  .page.home(ref="home")
+  .home(ref="home")
     Tetris(v-if="isTetrisActive")
     .container
       .logo-wrapper
