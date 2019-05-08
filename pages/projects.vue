@@ -20,13 +20,15 @@
         .slider-content(:class="sliderTransition && 'transition-enabled'" :style="{width: slidesWidth + 'px', transform: 'translate3d(' + translateOffset  + 'px,0,0)'}"
           ref="sliderContent"
           @mousedown="sliderScrollStart"
-          @mouseup="sliderScrollFinish")
+          @mouseup="sliderScrollFinish"
+          @mouseleave="sliderMouseLeave"
+          )
           .slider-item(
             ref="slideWidth"
             v-for="slide, index in slides",
             :class="{'previous': index < slideIndex, 'active': index === slideIndex, 'next': index > slideIndex }")
             .slider-item__inner(@click="eventStopPropagation")
-              nuxt-link(:to="'/project/' + slide.index" draggable="false" :event="''")
+              nuxt-link(:to="'/project/' + slide.index" draggable="false" :event="sliderLinkActive ? 'click' : ''")
                 .slider-item__name
                   | {{ slide.title }}
                 .slider-item__description
@@ -120,12 +122,15 @@ export default {
       cursorLeft: false,
       cursorRight: false,
       oneDotWidth: 0,
+
+      // data for scrollSlider
       scrollSlider: false,
       mouseOffset: 0,
       lastSliderMouseOffset: 0,
       sliderTransition: true,
-
-
+      mouseOffsetStart: 0,
+      mouseOffsetFinish: 0,
+      sliderLinkActive: true
     }
   },
 
@@ -134,7 +139,7 @@ export default {
       if (this.scrollSlider) {
         return this.mouseOffset
       }
-      return -(this.slidesWidth / this.slides.length) * this.slideIndex
+      return this.getSliderPosition()
     }
   },
 
@@ -266,9 +271,13 @@ export default {
       this.slideIndex = i
     },
 
-    getSlederMouseOffset(evt) {
-      if (this.lastSliderMouseOffset) {
-        this.mouseOffset = (-(this.slidesWidth / this.slides.length) * this.slideIndex) - (this.lastSliderMouseOffset - evt.clientX)
+    getSliderPosition() {
+      return -(this.slidesWidth / this.slides.length) * this.slideIndex
+    },
+
+    getSliderMouseOffset(evt) {
+      if (!!this.lastSliderMouseOffset) {
+        this.mouseOffset = this.getSliderPosition() - (this.lastSliderMouseOffset - evt.clientX)
       } else {
         this.lastSliderMouseOffset = evt.clientX
       }
@@ -276,22 +285,40 @@ export default {
 
     sliderScrollStart() {
       this.sliderTransition = false
+      this.mouseOffset = this.getSliderPosition()
       this.scrollSlider = true
-      this.mouseOffset = -(this.slidesWidth / this.slides.length) * this.slideIndex
-      this.$refs.sliderContent.addEventListener('mousemove', this.getSlederMouseOffset)
+      this.mouseOffsetStart = this.getSliderPosition()
+      this.$refs.sliderContent.addEventListener('mousemove', this.getSliderMouseOffset)
     },
 
     sliderScrollFinish() {
-      this.$refs.sliderContent.removeEventListener('mousemove', this.getSlederMouseOffset)
+      this.$refs.sliderContent.removeEventListener('mousemove', this.getSliderMouseOffset)
 
+      this.mouseOffsetFinish = this.mouseOffset
       this.sliderTransition = true
       this.scrollSlider = false
       this.lastSliderMouseOffset = 0
+      this.sliderLinkActive = true
+      const scrollInterval = Math.abs(this.mouseOffsetStart - this.mouseOffsetFinish)
 
-        // this.onSlide(this.next, this.slides)
+      if (scrollInterval > 100) {
+        this.sliderLinkActive = false
+        if ((this.mouseOffsetStart > this.mouseOffsetFinish)) {
+          return this.onSlide(this.next, this.slides)
+        }
 
-        // this.onSlide(this.prev, this.slides)
+        if (this.mouseOffsetStart < this.mouseOffsetFinish) {
+          return this.onSlide(this.prev, this.slides)
+        }
+      }
+    },
 
+    sliderMouseLeave() {
+      this.scrollSlider = false
+      this.lastSliderMouseOffset = 0
+      this.$refs.sliderContent ?
+        this.$refs.sliderContent.removeEventListener('mousemove', this.getSliderMouseOffset) :
+        null
     }
   }
 }
@@ -430,14 +457,13 @@ export default {
 
   .slider-content {
     display: block;
-    // transition: transform 1s ease;
     transform: translate3d(0, 0, 0);
     will-change: transform;
     white-space: nowrap;
   }
 
   .transition-enabled {
-    transition: transform 1s ease;
+    transition: transform 0.8s ease;
   }
 
   .slider-item {
