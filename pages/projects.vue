@@ -63,7 +63,7 @@ export default {
           index: 2,
           title: 'Matter',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/matter.jpg')
+          src: require('~/assets/images/matter.png')
         },
         {
           index: 3,
@@ -75,19 +75,19 @@ export default {
           index: 4,
           title: 'Hammer for Mac',
           subtitle: 'Development',
-          src: require('~/assets/images/hammer.jpg')
+          src: require('~/assets/images/hammer.png')
         },
         {
           index: 5,
           title: 'Forge',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/forge.jpg')
+          src: require('~/assets/images/forge.png')
         },
         {
           index: 6,
           title: 'Chisel',
           subtitle: 'Frontend development',
-          src: require('~/assets/images/chisel.jpg')
+          src: require('~/assets/images/chisel.png')
         },
         {
           index: 7,
@@ -99,13 +99,13 @@ export default {
           index: 8,
           title: 'Uptime connect',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/uptime.jpg')
+          src: require('~/assets/images/uptime.png')
         },
         {
           index: 9,
           title: 'Bitcannery',
           subtitle: 'Blockchain',
-          src: require('~/assets/images/bitcannery.jpg')
+          src: require('~/assets/images/bitcannery.png')
         },
         {
           index: 10,
@@ -144,7 +144,9 @@ export default {
   },
 
   mounted () {
+
     setTimeout(() => {
+      document.addEventListener('wheel', this.touchStart)
       this.oneDotWidth = (window.getComputedStyle(this.$refs.dots).width).replace('px', '')
       this.slidesWidth = this.getSlidesWidth()
     }, 300)
@@ -319,6 +321,15 @@ export default {
       this.$refs.sliderContent ?
         this.$refs.sliderContent.removeEventListener('mousemove', this.getSliderMouseOffset) :
         null
+    },
+
+    touchStart(evt) {
+      console.log('touchStart', evt)
+
+      history.pushState(null, null, window.location);
+      // window.addEventListener('popstate', function(event) {
+      // history.pushState(null, null, 'pagename');
+      // });
     }
   }
 }
