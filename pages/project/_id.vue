@@ -20,8 +20,9 @@
             | Live
           a.live-link(:href="`https://${project.live}`" target="_blank")
             | {{ project.live }}
-    .project-images(v-if="project.images.length")
-      projectImages(:images="project.images" :name="project.name")
+    .project-images
+      //- projectImages(:images="project.images" :name="project.name")
+      component(:is="dynamicComponent" :name="project.name")
 
 </template>
 
@@ -34,7 +35,7 @@ export default {
   layout: 'item-page',
 
   components: {
-    projectImages
+    projectImages,
   },
 
   asyncData (context) {
@@ -45,9 +46,29 @@ export default {
 
   data() {
     return {
-      project: null
+      project: null,
+      dynamicComponent: null
     }
-  }
+  },
+
+  computed: {
+    loader() {
+      if (!this.project) {
+          return null
+      }
+      return () => import(`~/components/projectsImages/${this.project.name}`)
+    },
+  },
+
+  mounted() {
+    this.loader()
+      .then(() => {
+          this.dynamicComponent = () => this.loader()
+      })
+      .catch(() => {
+          this.dynamicComponent = () => null
+      })
+  },
 }
 </script>
 

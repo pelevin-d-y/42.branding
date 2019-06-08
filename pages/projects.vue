@@ -93,7 +93,7 @@ export default {
           index: 7,
           title: 'Statebird creative',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/statebird.jpg')
+          src: require('~/assets/images/statebird.png')
         },
         {
           index: 8,
@@ -111,7 +111,7 @@ export default {
           index: 10,
           title: 'Smartomato',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/smartomato.jpg')
+          src: require('~/assets/images/smartomato.png')
         }
       ],
       buttonsBlocked: false,
@@ -147,6 +147,7 @@ export default {
 
     setTimeout(() => {
       document.addEventListener('wheel', this.touchStart)
+
       this.oneDotWidth = (window.getComputedStyle(this.$refs.dots).width).replace('px', '')
       this.slidesWidth = this.getSlidesWidth()
     }, 300)
@@ -278,7 +279,7 @@ export default {
     },
 
     getSliderMouseOffset(evt) {
-      if (!!this.lastSliderMouseOffset) {
+      if (this.lastSliderMouseOffset) {
         this.mouseOffset = this.getSliderPosition() - (this.lastSliderMouseOffset - evt.clientX)
       } else {
         this.lastSliderMouseOffset = evt.clientX
@@ -321,15 +322,6 @@ export default {
       this.$refs.sliderContent ?
         this.$refs.sliderContent.removeEventListener('mousemove', this.getSliderMouseOffset) :
         null
-    },
-
-    touchStart(evt) {
-      console.log('touchStart', evt)
-
-      history.pushState(null, null, window.location);
-      // window.addEventListener('popstate', function(event) {
-      // history.pushState(null, null, 'pagename');
-      // });
     }
   }
 }
@@ -378,14 +370,6 @@ export default {
 
     &--sliding {
       pointer-events: none;
-    }
-
-    &.cursorLeft {
-      // cursor: url('~assets/images/left.svg'), auto;
-    }
-
-    &.cursorRight {
-      // cursor: url('~assets/images/right.svg'), auto;
     }
   }
 
