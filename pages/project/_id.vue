@@ -21,22 +21,16 @@
           a.live-link(:href="`https://${project.live}`" target="_blank")
             | {{ project.live }}
     .project-images
-      //- projectImages(:images="project.images" :name="project.name")
       component(:is="dynamicComponent" :name="project.name")
 
 </template>
 
 <script>
 import projects from '~/projects/projects'
-import projectImages from '~/components/projectImages'
 
 export default {
   name: 'project',
   layout: 'item-page',
-
-  components: {
-    projectImages,
-  },
 
   asyncData (context) {
     return {
