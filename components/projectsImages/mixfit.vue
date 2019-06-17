@@ -53,17 +53,17 @@ export default {
   width: 100%;
 }
 
-.images {
-  position: relative;
-  left: -10%;
+  .images {
+    position: relative;
+    left: -10%;
 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  width: 120%;
-  padding-top: calc(88/1152*100vw);
-  padding-bottom: 60px;
-}
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 120%;
+    padding-top: calc(88/1152*100vw);
+    padding-bottom: 60px;
+  }
 
 .image {
   width: 22.2vw;

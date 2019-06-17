@@ -50,6 +50,7 @@ export default {
       if (!this.project) {
           return null
       }
+      console.log(this.project.name)
       return () => import(`~/components/projectsImages/${this.project.name}`)
     },
   },

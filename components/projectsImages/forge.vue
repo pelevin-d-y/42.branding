@@ -1,5 +1,7 @@
 <template lang="pug">
-
+  .wrapper
+    .images
+      | Forge
 </template>
 
 <script>
