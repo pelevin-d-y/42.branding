@@ -1,7 +1,7 @@
 <template lang="pug">
   .wrapper(:class="name")
     .image
-      img(:src="`/images/${name}/image.png`")
+      img(:src="require(`~/static/images/${name}/image.png`)")
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
   ],
 
   mounted() {
-    console.log('name', this.name)
+
   }
 }
 </script>
