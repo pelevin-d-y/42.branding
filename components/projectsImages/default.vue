@@ -2,7 +2,7 @@
   .wrapper(:class="name")
     .image
       img(@click="closePreview" :src="require(`~/static/images/${name}/image.png`)")
-    ImagePreview(v-if="previewOpen" @closePopup="closePreview" :name="name" ref="imagePreviev")
+    //- ImagePreview(v-if="previewOpen" @closePopup="closePreview" :name="name" ref="imagePreviev")
 </template>
 
 <script>

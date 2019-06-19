@@ -1,8 +1,8 @@
 <template lang="pug">
-  .popup(ref="popup")
+  .popup
     .close(@click="close")
       Close
-    .wrapper
+    .wrapper(ref="popup")
       .image
         img(:src="require(`~/static/images/${name}/image.png`)")
     .overlay(@click="close")
@@ -20,12 +20,16 @@ export default {
   },
 
   mounted() {
+    document.body.style.overflow = 'hidden'
     disableBodyScroll(this.$refs.popup)
+  },
+
+  beforeDestroy() {
+    enableBodyScroll(this.$refs.popup)
   },
 
   methods: {
     close() {
-      enableBodyScroll(this.$refs.popup)
       this.$emit('closePopup')
     }
   }
@@ -66,6 +70,8 @@ export default {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+
+    -webkit-overflow-scrolling: touch;
   }
 
   .close {
