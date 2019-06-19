@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import projects from '~/projects/projects'
+import projects from '~/projects-config/config'
 
 export default {
   name: 'project',
@@ -50,8 +50,7 @@ export default {
       if (!this.project) {
           return null
       }
-      console.log(this.project.name)
-      return () => import(`~/components/projectsImages/${this.project.name}`)
+      return () => import(`~/components/projectsImages/${this.project.imagesComponent}`)
     },
   },
 
@@ -140,6 +139,10 @@ export default {
   }
 
   @media (max-width: 768px) {
+    .container {
+      padding-bottom: 60px;
+    }
+
     .text {
       font-size: 18px;
       line-height: 32px;

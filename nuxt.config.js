@@ -1,5 +1,5 @@
 import pkg from './package'
-import projects from './projects/projects'
+import projects from './projects-config/config'
 
 const faviconPath = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/42.branding/favicon.ico' : '/favicon.ico'
 
