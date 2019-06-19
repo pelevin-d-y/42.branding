@@ -1,17 +1,34 @@
 <template lang="pug">
   .wrapper(:class="name")
     .image
-      img(:src="require(`~/static/images/${name}/image.png`)")
+      img(@click="closePreview" :src="require(`~/static/images/${name}/image.png`)")
+    ImagePreview(v-if="previewOpen" @closePopup="closePreview" :name="name" ref="imagePreviev")
 </template>
 
 <script>
+import ImagePreview from '~/components/ImagePreview'
+
 export default {
+  name: 'Default',
+
   props: [
     'name'
   ],
 
-  mounted() {
+  components: {
+    ImagePreview
+  },
 
+  data() {
+    return {
+      previewOpen: false
+    }
+  },
+
+  methods: {
+    closePreview() {
+      this.previewOpen = !this.previewOpen
+    }
   }
 }
 </script>
