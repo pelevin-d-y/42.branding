@@ -25,6 +25,10 @@ export default {
     }
   },
 
+  mounted() {
+    console.log('aaaa', this.name)
+  },
+
   methods: {
     closePreview() {
       this.previewOpen = !this.previewOpen
@@ -40,12 +44,10 @@ export default {
   }
 
   .image {
-    max-width: 1220px;
+    max-width: 1920px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .image img {

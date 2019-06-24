@@ -114,12 +114,12 @@ export default {
 
   .burger-path-1,
   .burger-path-2 {
-    fill:#FFA63E;
+    fill:#3431DC;
   }
 
   .close-path-1,
   .close-path-2 {
-    fill:#FFA63E;
+    fill:#3431DC;
   }
 
   @media (max-width: 768px) {

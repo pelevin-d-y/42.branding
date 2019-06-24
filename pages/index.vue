@@ -248,4 +248,18 @@ export default {
       line-height: 52px;
     }
   }
+
+  @media (max-width: 500px) {
+    .logo {
+      margin-left: 0;
+    }
+
+    .logo-text {
+      text-align: left;
+    }
+
+    .nav-item {
+      text-align: left;
+    }
+  }
 </style>

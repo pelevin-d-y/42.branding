@@ -178,7 +178,7 @@ export default [
     id: 9,
     title: 'Bitcannery',
     name: 'bitcannery',
-    imagesComponent: '',
+    imagesComponent: 'default',
     textBlocks: [
       {
         title: "",
