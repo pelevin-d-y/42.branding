@@ -28,7 +28,7 @@
             v-for="slide, index in slides",
             :class="{'previous': index < slideIndex, 'active': index === slideIndex, 'next': index > slideIndex }")
             .slider-item__inner(@click="eventStopPropagation")
-              nuxt-link(:to="'/project/' + slide.index" draggable="false" :event="sliderLinkActive ? 'click' : ''")
+              nuxt-link(:to="'/project/' + slide.index" no-prefetch draggable="false" :event="sliderLinkActive ? 'click' : ''")
                 .slider-item__name
                   | {{ slide.title }}
                 .slider-item__description

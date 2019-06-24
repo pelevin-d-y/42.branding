@@ -32,6 +32,10 @@ export default {
   name: 'project',
   layout: 'item-page',
 
+  components: {
+    mixfit: () => import(`~/components/projectsImages/mixfit`)
+  },
+
   asyncData (context) {
     return {
       project: projects.filter(project => project.id === Number(context.route.params.id))[0]
@@ -48,19 +52,23 @@ export default {
   computed: {
     loader() {
       if (!this.project) {
-          return null
+        return null
       }
+      console.log('computed project true', this.project.imagesComponent)
       return () => import(`~/components/projectsImages/${this.project.imagesComponent}`)
     },
   },
 
   mounted() {
+    console.log(this.dynamicComponent)
     this.loader()
-      .then(() => {
-          this.dynamicComponent = () => this.loader()
+      .then((comp) => {
+        console.log('dynamicComponent', comp)
+        this.dynamicComponent = () => this.loader()
       })
-      .catch(() => {
-          this.dynamicComponent = () => null
+      .catch((e) => {
+        console.log('catch', e)
+        this.dynamicComponent = () => null
       })
   },
 }
