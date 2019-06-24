@@ -648,7 +648,6 @@ export default {
     }
 
     .slider-item img {
-      border-radius: 6px;
       height: initial;
     }
 
