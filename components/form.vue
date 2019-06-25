@@ -123,6 +123,8 @@ export default {
     height: 48px;
     width: 184px;
     padding-bottom: 4px;
+    padding-left: 0;
+    padding-right: 0;
 
     line-height: 39px;
     font-size: 21px;
@@ -308,7 +310,7 @@ export default {
     width: 100%;
     height: 48px;
     padding: 8px;
-    border-radius: none;
+    border-radius: 0;
 
     font-size: 18px;
   }
