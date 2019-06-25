@@ -156,6 +156,11 @@ export default {
       padding-bottom: 60px;
     }
 
+    .title {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
     .text {
       font-size: 18px;
       line-height: 32px;
