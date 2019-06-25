@@ -32,10 +32,6 @@ export default {
   name: 'project',
   layout: 'item-page',
 
-  components: {
-    mixfit: () => import(`~/components/projectsImages/mixfit`)
-  },
-
   asyncData (context) {
     return {
       project: projects.filter(project => project.id === Number(context.route.params.id))[0]
@@ -54,20 +50,16 @@ export default {
       if (!this.project) {
         return null
       }
-      console.log('computed project true', this.project.imagesComponent)
       return () => import(`~/components/projectsImages/${this.project.imagesComponent}`)
     },
   },
 
   mounted() {
-    console.log(this.dynamicComponent)
     this.loader()
-      .then((comp) => {
-        console.log('dynamicComponent', comp)
+      .then(() => {
         this.dynamicComponent = () => this.loader()
       })
       .catch((e) => {
-        console.log('catch', e)
         this.dynamicComponent = () => null
       })
   },
@@ -112,6 +104,8 @@ export default {
   }
 
   .live-link {
+    position: relative;
+
     font-size: 21px;
     line-height: 40px;
     letter-spacing: 0.01em;
@@ -119,6 +113,17 @@ export default {
 
     color: #3431DC;
     text-decoration: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -31px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url('../../assets/images/live-icon.svg') no-repeat center/contain;
+    }
   }
 
   .block {
@@ -159,6 +164,18 @@ export default {
     .project-image {
       margin-top: 60px;
     }
+
+    .block {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
   }
 
   @media (max-width: 600px) {
@@ -168,6 +185,14 @@ export default {
 
     .project-footer__right {
       padding-top: 60px;
+    }
+
+    .live-link {
+      padding-left: 28px;
+
+      &::before {
+        left: -3px;
+      }
     }
   }
 </style>

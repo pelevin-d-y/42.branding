@@ -1,5 +1,5 @@
 <template lang="pug">
-  form.form
+  form.form(@submit="submitForm")
     .form__wrapper
       .form__row
         .input-wrapper(:class="{active: name.length > 0}")
@@ -40,7 +40,7 @@
           )
           span(v-show="errors.has('message')" class="help is-danger") {{ errors.first('message') }}
       .form__row
-        .form__button(:class="{disable: !formIsFull}" @click="submitForm") Send message
+        button.form__button(:class="{disable: !formIsFull}" @click="submitForm") Send message
 </template>
 
 <script>
@@ -61,7 +61,8 @@ export default {
       })
     },
 
-    submitForm() {
+    submitForm(e) {
+      e.preventDefault();
       this.$validator.validateAll().then((result) => {
         if (result) {
           console.log('valid')
@@ -123,7 +124,7 @@ export default {
     width: 184px;
     padding-bottom: 4px;
 
-    line-height: 48px;
+    line-height: 39px;
     font-size: 21px;
     text-align: center;
     letter-spacing: 0.02em;
@@ -231,6 +232,10 @@ export default {
   background: #ffffff;
 }
 
+.form__button {
+  color: #000000;
+}
+
 .form__button:hover {
   border: 2px solid $black;
   color: $white;
@@ -303,6 +308,7 @@ export default {
     width: 100%;
     height: 48px;
     padding: 8px;
+    border-radius: none;
 
     font-size: 18px;
   }

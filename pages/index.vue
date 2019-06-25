@@ -52,12 +52,8 @@ export default {
   mounted() {
     if (process.browser) {
       window.addEventListener('resize', this.onResize)
-       this.onResize()
-      if (window.innerWidth > 768) {
-        this.$refs.home.addEventListener('mousemove', this.mouseMove)
-        this.paralaxCenter.X = this.$refs.logo.getBoundingClientRect().left + this.$refs.logo.offsetWidth/2
-        this.paralaxCenter.Y = this.$refs.logo.getBoundingClientRect().top + this.$refs.logo.offsetHeight/2
-      }
+      this.onResize()
+      this.setStartParalaxCenter()
     }
   },
 
@@ -68,10 +64,21 @@ export default {
 
   methods: {
     onResize() {
+      this.setStartParalaxCenter()
       if (window.innerWidth <= 768) {
         this.isTetrisActive = false
       } else {
         this.isTetrisActive = true
+      }
+    },
+
+    setStartParalaxCenter() {
+      if (window.innerWidth > 768) {
+        this.$refs.home.addEventListener('mousemove', this.mouseMove)
+        this.paralaxCenter.X = this.$refs.logo.getBoundingClientRect().left + this.$refs.logo.offsetWidth/2
+        this.paralaxCenter.Y = this.$refs.logo.getBoundingClientRect().top + this.$refs.logo.offsetHeight/2
+      } else {
+        this.$refs.home.removeEventListener('mousemove', this.mouseMove)
       }
     },
 
@@ -98,7 +105,6 @@ export default {
       } else {
         return currentOffset * 0.03
       }
-      console.log('Azxnnwsadwqe')
     }
   }
 }
@@ -224,9 +230,8 @@ export default {
     }
 
     .logo-shadow svg {
-      // max-width: 250px;
-      width: 100%;
       height: auto;
+      width: 245px;
     }
 
     .nav {
@@ -246,6 +251,16 @@ export default {
       display: inline;
       font-size: 46px;
       line-height: 52px;
+    }
+
+    .logo-image {
+      left: 0 !important;
+      top: 0 !important;
+    }
+
+    .logo-shadow {
+      left: 24px !important;
+      top: 31px !important;
     }
   }
 

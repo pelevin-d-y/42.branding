@@ -590,7 +590,7 @@ export default {
     }
 
     .slider-container {
-      padding: 80px 0;
+      padding: 90px 0 80px 0;
       height: initial;
     }
 
@@ -609,7 +609,7 @@ export default {
     }
 
     .slider-item {
-      margin-bottom: 70px;
+      margin-bottom: 48px;
       width: 100%;
       display: block;
       padding: 0;
@@ -637,14 +637,18 @@ export default {
     .slider-item__name {
       margin-bottom: 5px;
       width: 100%;
+
       white-space: pre-wrap;
-      line-height: 30px;
+      text-align: left;
+      font-size: 48px;
+      line-height: 52px;
     }
 
     .slider-item__description {
       margin-bottom: 20px;
+      margin-left: 0;
       white-space: pre-wrap;
-      padding: 0 23px;
+      line-height: 20px;
     }
 
     .slider-item img {
