@@ -1,7 +1,7 @@
 <template lang="pug">
   .wrapper(:class="name")
     .image
-      img(@click="closePreview" :src="require(`~/static/images/${name}/image.png`)")
+      img(@click="closePreview" :src="require(`~/static/images/${name}/image.jpg`)" :alt="name")
     //- ImagePreview(v-if="previewOpen" @closePopup="closePreview" :name="name" ref="imagePreviev")
 </template>
 
@@ -25,10 +25,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log('aaaa', this.name)
-  },
-
   methods: {
     closePreview() {
       this.previewOpen = !this.previewOpen
@@ -50,9 +46,47 @@ export default {
     margin-right: auto;
   }
 
+  .hammer .image {
+    height: 2785px;
+  }
+
+  .iamip .image {
+    height: 2057px;
+  }
+
+  .iamip .image {
+    height: 2057px;
+  }
+
+  .forge .image {
+    height: 3112px;
+  }
+
+  .chisel .image {
+    height: 1582px;
+  }
+
+  .statebird .image {
+    height: 2784px;
+  }
+
+  .uptime .image {
+    height: 2885px;
+  }
+
+  .bitcannery .image {
+    height: 1433px;
+  }
+
+  .smartomato .image {
+    height: 2894px;
+  }
+
   .image img {
     width: 100%;
     display: block;
+    object-fit: cover;
+    height: 100%;
   }
 
   .chisel,
@@ -61,10 +95,15 @@ export default {
     border-top: none;
   }
 
-  @media (max-width: 1200px) {
-    .image {
-      padding-left: 0;
-      padding-right: 0;
+  @media (max-width: 1024px) {
+    .wrapper .image {
+      height: auto;
+    }
+
+    .image img {
+      width: 184%;
+      margin-left: -41%;
+      object-fit: contain;
     }
   }
 </style>

@@ -55,7 +55,7 @@ export default [
     id: 3,
     title: 'IAMIP',
     name: 'iamip',
-    imagesComponent: '',
+    imagesComponent: 'default',
     textBlocks: [
       {
         title: "Who",
@@ -198,7 +198,7 @@ export default [
     id: 10,
     title: 'Smartomato',
     name: 'smartomato',
-    imagesComponent: '',
+    imagesComponent: 'default',
     textBlocks: [
       {
         title: "",

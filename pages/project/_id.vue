@@ -55,13 +55,7 @@ export default {
   },
 
   mounted() {
-    this.loader()
-      .then(() => {
-        this.dynamicComponent = () => this.loader()
-      })
-      .catch((e) => {
-        this.dynamicComponent = () => null
-      })
+    this.dynamicComponent = async () => await this.loader()
   },
 }
 </script>
