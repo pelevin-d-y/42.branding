@@ -7,7 +7,7 @@
           h2.about__title
             | Who we are
           .who-we-are__text.text
-            | 42 was built to be different. An alternative to the large agency. We are a collective of design-obsessed digital junkies, based in Rostov-on-Don. Our focus is to create new interactive experiences for users; striking the perfect balance between usability and aesthetic. We seek to push creative and developmental boundaries, while bringing ambitious ideas to life.
+            | 42 was built to be different. An alternative to the large agency. We are a collective of design-obsessed digital junkies, based in Rostov-na-Donu. Our focus is to create new interactive experiences for users; striking the perfect balance between usability and aesthetic. We seek to push creative and developmental boundaries, while bringing ambitious ideas to life.
       .what-we-do
         .container
           h2.about__title

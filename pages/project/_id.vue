@@ -22,15 +22,23 @@
             | {{ project.live }}
     .project-images
       component(:is="dynamicComponent" :name="project.name")
+    .nav-bar__wrapper
+      NavBar(:currentProject="project" :projects="projects")
+
 
 </template>
 
 <script>
 import projects from '~/projects-config/config'
+import NavBar from '~/components/NavBar'
 
 export default {
   name: 'project',
   layout: 'item-page',
+
+  components: {
+    NavBar
+  },
 
   asyncData (context) {
     return {
@@ -40,6 +48,7 @@ export default {
 
   data() {
     return {
+      projects: projects,
       project: null,
       dynamicComponent: null
     }
