@@ -39,28 +39,34 @@ export default {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
+    border-top:  0.5px solid #DBDBDB;
   }
 
   .prev,
   .next {
     width: 50%;
-    background: #3431DC;
     padding: 56px 12px;
 
     font-size: 40px;
     line-height: 56px;
     letter-spacing: 0.01em;
-    color: #FFFFFF;
+    color: #000105;
     text-decoration: none;
     text-align: center;
     font-weight: 600;
 
     &:hover {
-      background: linear-gradient(180deg, #3431DC 0%, #615EEE 100%);
-      -webkit-text-stroke: 2px white;
-      color: transparent;
-
+      color: #3431DC;
     }
+  }
+
+  .prev {
+    border-right: 0.5px solid #DBDBDB;
+    cursor: url("../assets/images/cursor-left.svg"), auto;
+  }
+
+  .next {
+    cursor: url("../assets/images/cursor-right.svg"), auto;
   }
 
   @media(max-width: 768px) {

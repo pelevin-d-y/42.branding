@@ -1,19 +1,19 @@
 <template lang="pug">
-  .page.portfolio
+  .page.portfolio()
     .slider-dots(ref="dots")
       .slider-dots__dot(
         @click="setSlide(i)"
         v-for="dot, i in slides")
       .slider-dots__dot.active(:style="{width: oneDotWidth / slides.length + 'px', transform: 'translateX(' + (oneDotWidth / slides.length * slideIndex) + 'px)'}")
     .slider-navigation
-      .slider__btn-left(@click="onSlide(prev, slides)")
+      //- .slider__btn-left(@click="onSlide(prev, slides)")
         sliderBtnLeft
       .slider__digits
         span.slider__digits-current
           | {{ slideIndex + 1 }} /
         span.slider__digits-length
           |  {{ slides.length }}
-      .slider__btn-right(@click="onSlide(next, slides)")
+      //- .slider__btn-right(@click="onSlide(next, slides)")
         sliderBtnRight
     .slider-container(@click="sidesClick" ref="container", :class="{'cursorLeft': cursorLeft, 'cursorRight': cursorRight}")
       .slider(ref="slider")
@@ -393,7 +393,7 @@ export default {
 
   .slider-navigation {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -407,8 +407,9 @@ export default {
 
   .slider__digits {
     padding-top: 9px;
+    margin: 0 auto;
 
-    font-size: 16px;
+    font-size: 18px;
     line-height: 18px;
   }
 
@@ -416,19 +417,19 @@ export default {
     color: rgba(11, 30, 38, 0.2);
   }
 
-  .slider__btn-left,
-  .slider__btn-right {
-    display: block;
-    cursor: pointer;
+  // .slider__btn-left,
+  // .slider__btn-right {
+  //   display: block;
+  //   cursor: pointer;
 
-    &:hover .btn-hover {
-      fill: #3431DC;
-    }
+  //   &:hover .btn-hover {
+  //     fill: #3431DC;
+  //   }
 
-    &:hover .btn-hover-stroke {
-      stroke: #ffffff;
-    }
-  }
+  //   &:hover .btn-hover-stroke {
+  //     stroke: #ffffff;
+  //   }
+  // }
 
   .slider-dots__dot {
     cursor: pointer;
@@ -550,13 +551,21 @@ export default {
   }
 
   .slider-prev {
-    background: url('../assets/images/left.svg') no-repeat center / contain;
+    // background: url('../assets/images/left.svg') no-repeat center / contain;
     left: 30px;
   }
 
   .slider-next {
-    background: url('../assets/images/right.svg') no-repeat center / contain;
+    // background: url('../assets/images/right.svg') no-repeat center / contain;
     right: 30px;
+  }
+
+  .cursorLeft {
+    cursor: url("../assets/images/cursor-left.svg"), auto;
+  }
+
+  .cursorRight {
+    cursor: url("../assets/images/cursor-right.svg"), auto;
   }
 
   @media (max-width: 1024px) {
