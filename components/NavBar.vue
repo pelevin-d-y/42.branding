@@ -77,7 +77,8 @@ export default {
       align-items: center;
       justify-content: center;
       padding: 26px 12px;
-      font-size: 36px;
+      font-size: 24px;
+      line-height: 30px;
     }
   }
 </style>
