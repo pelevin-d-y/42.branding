@@ -21,7 +21,7 @@
           a.live-link(:href="`https://${project.live}`" target="_blank")
             | {{ project.live }}
     .project-images
-      component(:is="dynamicComponent" :name="project.name")
+      component(:is="loader" :name="project.name")
     .nav-bar__wrapper
       NavBar(:currentProject="project" :projects="projects")
 
@@ -49,22 +49,17 @@ export default {
   data() {
     return {
       projects: projects,
-      project: null,
-      dynamicComponent: null
+      project: null
     }
   },
 
   computed: {
     loader() {
-      if (!this.project) {
+      if (!this.project.imagesComponent) {
         return null
       }
       return () => import(`~/components/projectsImages/${this.project.imagesComponent}`)
     },
-  },
-
-  mounted() {
-    this.dynamicComponent = async () => await this.loader()
   },
 }
 </script>
