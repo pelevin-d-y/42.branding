@@ -50,16 +50,6 @@ export default {
       this.openMenu = !this.openMenu
     },
 
-    touchStart(e) {
-      console.log('touchStart', this.unify(e).clientX)
-      // this.x0 = this.unify(e).clientX
-    },
-
-    touchEnd(e) {
-      console.log('touchEnd', this.unify(e).clientX)
-        // let dx = unify(e).clientX - x0, s = Math.sign(dx);
-    },
-
     unify(e) {
       return e.changedTouches ? e.changedTouches[0] : e
     }

@@ -76,8 +76,9 @@ export default {
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
-      padding: 26px 8px;
+      padding: 26px 12px;
       font-size: 24px;
+      line-height: 30px;
     }
   }
 </style>

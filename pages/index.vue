@@ -46,10 +46,17 @@ export default {
         X: 0,
         Y: 0
       },
+      touchStart: 0,
+      touchEnd: 0,
     }
   },
 
   mounted() {
+    window.addEventListener('mousewheel', this.wheelHandler)
+    window.addEventListener("touchstart", this.touchStartHandler);
+    window.addEventListener("touchend", this.touchEndHandler);
+    window.addEventListener("touchmove", this.touchMoveHandler);
+
     if (process.browser) {
       window.addEventListener('resize', this.onResize)
       this.onResize()
@@ -58,8 +65,15 @@ export default {
   },
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
     this.$refs.home.removeEventListener('mousemove', this.mouseMove)
+
+    window.removeEventListener('mousewheel', this.wheelHandler)
+    window.removeEventListener('resize', this.onResize)
+    window.removeEventListener("touchstart", this.touchStartHandler);
+    window.removeEventListener("touchend", this.touchEndHandler);
+    window.removeEventListener("touchmove", this.touchMoveHandler);
+
+    document.documentElement.style.backgroundColor = ''
   },
 
   methods: {
@@ -105,6 +119,23 @@ export default {
       } else {
         return currentOffset * 0.03
       }
+    },
+
+    wheelHandler(e) {
+      if (e.deltaY < 0) {
+        document.documentElement.style.backgroundColor = '#3431DC'
+      } else if (e.deltaY > 0) {
+        document.documentElement.style.backgroundColor = '#615EEE'
+      }
+    },
+
+    touchStartHandler(e) {
+      this.touchStart = e.touches[0].clientY
+    },
+
+    touchMoveHandler(e) {
+      this.touchEnd = e.changedTouches[0].clientY
+      document.documentElement.style.backgroundColor = this.touchStart < this.touchEnd ? '#3431DC' : '#615EEE'
     }
   }
 }
@@ -181,6 +212,8 @@ export default {
   .logo-image {
     position: relative;
     z-index: 10;
+    width: 289px;
+    height: 201px;
   }
 
   .logo-shadow {
@@ -254,6 +287,8 @@ export default {
     }
 
     .logo-image {
+      width: 250px;
+      height: 170px;
       left: 0 !important;
       top: 0 !important;
     }

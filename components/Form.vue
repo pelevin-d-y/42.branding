@@ -338,9 +338,5 @@ export default {
     top: 49px;
     font-size: 12px;
   }
-
-  .help.is-danger {
-
-  }
 }
 </style>
