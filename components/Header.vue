@@ -35,13 +35,23 @@ export default {
 
   data() {
     return {
-      openMenu: false
+      openMenu: false,
+      x0: null
     }
+  },
+
+  mounted() {
+    document.body.addEventListener("touchstart", this.touchStart)
+    document.body.addEventListener("touchend", this.touchEnd)
   },
 
   methods: {
     toggleMenu() {
       this.openMenu = !this.openMenu
+    },
+
+    unify(e) {
+      return e.changedTouches ? e.changedTouches[0] : e
     }
   }
 }

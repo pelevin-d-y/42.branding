@@ -146,8 +146,6 @@ export default {
   mounted () {
 
     setTimeout(() => {
-      document.addEventListener('wheel', this.touchStart)
-
       this.oneDotWidth = (window.getComputedStyle(this.$refs.dots).width).replace('px', '')
       this.slidesWidth = this.getSlidesWidth()
     }, 300)
