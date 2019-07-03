@@ -21,7 +21,7 @@
           a.live-link(:href="`https://${project.live}`" target="_blank")
             | {{ project.live }}
     .project-images
-      //- component(:is="loader" :name="project.name")
+      component(:is="loader" :name="project.name")
     .nav-bar__wrapper
       NavBar(:currentProject="project" :projects="projects")
 
