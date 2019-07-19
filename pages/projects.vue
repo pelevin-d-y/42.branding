@@ -144,7 +144,6 @@ export default {
   },
 
   mounted () {
-
     setTimeout(() => {
       this.oneDotWidth = (window.getComputedStyle(this.$refs.dots).width).replace('px', '')
       this.slidesWidth = this.getSlidesWidth()
@@ -229,12 +228,10 @@ export default {
     onSlide (func, slides) {
       if (this.canSlide) {
         this.canSlide = false
-        this.$refs.container.classList.add('slider-container--sliding')
         func(slides)
         this.setHash()
         setTimeout(() => {
           this.canSlide = true
-          this.$refs.container.classList.remove('slider-container--sliding')
         }, 400)
       }
     },
