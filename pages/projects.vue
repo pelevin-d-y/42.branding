@@ -33,7 +33,10 @@
                   | {{ slide.title }}
                 .slider-item__description
                   | {{ slide.subtitle }}
-                img(:src="slide.src")
+                picture
+                  source(:secset="slide.srcWebp" type="image/webp")
+                  source(:secset="slide.src" type="image/png")
+                  img(:src="slide.src")
 
 </template>
 
@@ -57,61 +60,71 @@ export default {
           index: 1,
           title: 'Mixfit',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/Mixfit.png')
+          src: require('~/assets/images/projects-png/Mixfit.png'),
+          srcWebp: require('~/assets/images/projects-webp/Mixfit.webp')
         },
         {
           index: 2,
           title: 'Matter',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/matter.png')
+          src: require('~/assets/images/projects-png/matter.png'),
+          srcWebp: require('~/assets/images/projects-webp/matter.webp')
         },
         {
           index: 3,
           title: 'IAMIP',
           subtitle: 'Frontend development',
-          src: require('~/assets/images/iMap.png')
+          src: require('~/assets/images/projects-png/iMap.png'),
+          srcWebp: require('~/assets/images/projects-webp/iMap.webp')
         },
         {
           index: 4,
           title: 'Hammer for Mac',
           subtitle: 'Development',
-          src: require('~/assets/images/hammer.png')
+          src: require('~/assets/images/projects-png/hammer.png'),
+          srcWebp: require('~/assets/images/projects-webp/hammer.webp')
         },
         {
           index: 5,
           title: 'Forge',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/forge.png')
+          src: require('~/assets/images/projects-png/forge.png'),
+          srcWebp: require('~/assets/images/projects-webp/forge.webp')
         },
         {
           index: 6,
           title: 'Chisel',
           subtitle: 'Frontend development',
-          src: require('~/assets/images/chisel.png')
+          src: require('~/assets/images/projects-png/chisel.png'),
+          srcWebp: require('~/assets/images/projects-webp/chisel.webp')
         },
         {
           index: 7,
           title: 'Statebird creative',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/statebird.png')
+          src: require('~/assets/images/projects-png/statebird.png'),
+          srcWebp: require('~/assets/images/projects-webp/statebird.webp')
         },
         {
           index: 8,
           title: 'Uptime connect',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/uptime.png')
+          src: require('~/assets/images/projects-png/uptime.png'),
+          srcWebp: require('~/assets/images/projects-webp/uptime.webp')
         },
         {
           index: 9,
           title: 'Bitcannery',
           subtitle: 'Blockchain',
-          src: require('~/assets/images/bitcannery.png')
+          src: require('~/assets/images/projects-png/bitcannery.png'),
+          srcWebp: require('~/assets/images/projects-webp/bitcannery.webp')
         },
         {
           index: 10,
           title: 'Smartomato',
           subtitle: 'Full stack develepment',
-          src: require('~/assets/images/smartomato.png')
+          src: require('~/assets/images/projects-png/smartomato.png'),
+          srcWebp: require('~/assets/images/projects-webp/smartomato.webp')
         }
       ],
       buttonsBlocked: false,
