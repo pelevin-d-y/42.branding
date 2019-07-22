@@ -34,8 +34,8 @@
                 .slider-item__description
                   | {{ slide.subtitle }}
                 picture
-                  source(:secset="slide.srcWebp" type="image/webp")
-                  source(:secset="slide.src" type="image/png")
+                  source(:srcset="slide.srcWebp" type="image/webp")
+                  source(:srcset="slide.src" type="image/png")
                   img(:src="slide.src")
 
 </template>
