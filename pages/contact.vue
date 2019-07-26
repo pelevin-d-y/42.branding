@@ -2,9 +2,6 @@
   .page-gradient.contact
     .gradient
     .content
-      .text
-        .container
-          | This portfolio is a glimpse at the way we design and prototype in code. Design something familiar, program it to do something unexpected, make sure people feel something. Available for the right project.
       .form-container
         .container
           .title
@@ -12,7 +9,7 @@
           Form
       .mail
         .container
-          | Contact us
+          | Contact us:
           |
           a.link(href="mailto:hello@42.com")
             | hello@42.com
@@ -32,6 +29,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .content {
+    padding-top: 70px;
+  }
+
   .container {
     max-width: 911px;
     padding-left: 86px;
@@ -93,6 +94,10 @@ export default {
   }
 
   @media (max-width: 768px) {
+    .content {
+      padding-top: 0;
+    }
+
     .title {
       margin-bottom: 36px;
       font-size: 31px;
