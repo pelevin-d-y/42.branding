@@ -5,7 +5,7 @@
       .form-container
         .container
           .title
-            | Want chat with us?
+            | Drop us a line
           Form
       .mail
         .container
