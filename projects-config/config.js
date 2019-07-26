@@ -6,17 +6,13 @@ export default [
     imagesComponent: 'mixfit',
     textBlocks: [
       {
-        title: "Who",
-        text: "Mixfit is an at-home nutritient delivery appliance that combines your health data and prediction engines to deliver personalised drinks that smell and taste wonderful."
-      },
-      {
         title: "What",
-        text: "A highly technical solution that combines the latest digital health data integrations, a significant application architecture, industrial design, hardware, firmware and embedded software to create an innovative personal health system."
+        text: "Mixfit is an at-home nutritient delivery appliance that combines your health data and prediction engines to deliver personalised drinks that smell and taste wonderful."
       },
       {
         title: "How",
         text: "We've built an end-to-end production-quality system for Showcase Demonstration of a conversational UI intelligent assistant mobile app, connected drink dispensing device with digital display and full API-first platform layer - in just 4 months!"
-      },
+      }
     ],
     services: [
       'React.js frontend development',
@@ -58,17 +54,13 @@ export default [
     imagesComponent: 'default',
     textBlocks: [
       {
-        title: "Who",
-        text: "IAMIP provides patent monitoring and collabotion tools for the World combined intellectual property database."
-      },
-      {
         title: "What",
-        text: "Full text patent search with extensive query language and granular patent data, presented in a modern and reactive web interface that is used by the most innovative companies."
+        text: "IAMIP provides patent monitoring and collaboration tools for the world combined intellectual property database."
       },
       {
         title: "How",
         text: "We've built two client applications and the Service Oriented main API layer as part of this architectural transformation. Helped IAMIP to expand to new markets and raise additional Seed investment to fuel this growth."
-      },
+      }
     ],
     services: [
       'React.js frontend development'
@@ -141,11 +133,11 @@ export default [
       },
       {
         title: "What",
-        text: "Develop a visually appealing brand logo and website to showcase their large breadth of work."
+        text: "We have developed a visually appealing brand logo and website to showcase their large breadth of work."
       },
       {
         title: "How",
-        text: "We first began the process my choosing a color palette and creating a charming logo. Then we developed a progressive website with Vue.js and a customized CMS."
+        text: "We first began the process by choosing a color palette and creating a charming logo. Then we developed a progressive website with Vue.js and a customized CMS."
       },
     ],
     services: [
@@ -163,7 +155,7 @@ export default [
     textBlocks: [
       {
         title: "",
-        text: "It is a portal for elevator maintenance company. That portal provides service that tracks elevators condition, collects the statistics and informs service engineers about the incidents through the mobile application. Service engineers have maintenance checklists for each type of equipment. Checklists and checklist reports data is managed within administration panel."
+        text: "Uptime connect is a portal for elevator maintenance company. The portal provides tracking elevators condition service, it collects statistics and alerts service engineers in case of incidents via the mobile application. Service engineers have maintenance checklists for each type of equipment. Checklists and checklist reports data is managed within administration panel."
       }
     ],
     services: [
@@ -202,7 +194,7 @@ export default [
     textBlocks: [
       {
         title: "",
-        text: "Smartomato a user friendly online ordering system for individual restaurants, multi-store chains, takeaways, cafes, convenience stores and franchises. We've developed bestpoke application for web and mobile devices on for this project. Google maps service has been used for taking geolocation coordinates and calculating the distance. On this project we got familiar with order logic. Its placement, cancellation and customization."
+        text: "Smartomato is a user friendly online ordering system for individual restaurants, multi-store chains, takeaways, cafes, convenience stores and franchises. We've developed bespoke application for web and mobile devices for this project. Google maps service has been used to get geolocation and calculate distances. On this project, we got familiar with order logic, placement, cancellation and customization."
       }
     ],
     services: [

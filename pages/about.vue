@@ -7,7 +7,7 @@
           h2.about__title
             | Who we are
           .who-we-are__text.text
-            | 42 was built to be different. An alternative to the large agency. We are a collective of design-obsessed digital junkies, based in Rostov-na-Donu. Our focus is to create new interactive experiences for users; striking the perfect balance between usability and aesthetic. We seek to push creative and developmental boundaries, while bringing ambitious ideas to life.
+            | We are team of young and enthusiastic designers and developers. Core team members graduated from Southern Federal University's department of Mathematics, Mechanics and Computer Science. We have background in applied math, financial math methods, machine learning and computer vision.
       .what-we-do
         .container
           h2.about__title
@@ -42,7 +42,10 @@
           h2.about__title
             | How we work
           .how-we-work__text.text
-            | We believe that great design is made better by great code; a marriage of crafts resulting in an original experience for the greater good. We are story-tellers at heart because that is the human language, and we strive to bring your story to life in a truly unique way with a strong sense of identity. We embrace the unknown and have expertise across a wide range of cutting-edge web technologies, frameworks, and tools.
+            p
+              | We specialize in building highly interactive web services and also writing and auditing non-standard distributed applications and blockchain systems. We quickly iterate from design to development. Speed and simplicity are our top priorities. In our process we utilize cutting edge technologies, adopt best practices and follow lean development approach.
+            p
+              | Started working as freelancers and employees of local startups we gained experience and united for bigger projects. During last years we participated in numerous projects as complete and capable outsource squad.
 </template>
 
 <script>

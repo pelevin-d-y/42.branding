@@ -9,7 +9,7 @@
           .logo-shadow(ref="logoShadow")
             LogoShadow
         .logo-text
-          | We create the face for the interact
+          | We create the face for the internet
       nav.nav
         ul
           li.nav-item
