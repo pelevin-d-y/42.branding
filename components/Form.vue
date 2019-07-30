@@ -1,5 +1,6 @@
 <template lang="pug">
-  form.form(@submit="submitForm")
+  form.form(@submit="submitForm" netlify)
+    .input(type="hidden" name="form-name" value="contact")
     .form__wrapper
       .form__row
         .input-wrapper(:class="{active: name.length > 0}")
@@ -62,13 +63,14 @@ export default {
     },
 
     submitForm(e) {
-      e.preventDefault();
+
       this.$validator.validateAll().then((result) => {
         if (result) {
           console.log('valid')
+
           return;
         }
-
+        e.preventDefault();
         console.warn('Not valid')
       });
     }
