@@ -1,10 +1,10 @@
 <template>
-  <!-- <form name="contact-us"  hidden>
+  <form name="contact-us"  hidden>
     <input type="hidden" name="form-name" value="contact" />
     <input type="text" name="name" />
     <input type="text" name="email" />
     <textarea name="message"></textarea>
-  </form> -->
+  </form>
   <div>
     <nuxt />
   </div>
