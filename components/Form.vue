@@ -1,5 +1,5 @@
 <template lang="pug">
-  form.form(@submit="submitForm" netlify)
+  form.form(@submit="submitForm" netlify netlify-honeypot="bot-field")
     .input(type="hidden" name="form-name" value="contact")
     .form__wrapper
       .form__row
