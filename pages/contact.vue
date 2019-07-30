@@ -11,8 +11,8 @@
         .container
           | Contact us:
           |
-          a.link(href="mailto:hello@42.com")
-            | hello@42.com
+          a.link(href="mailto:hello@42.works")
+            | hello@42.works
 </template>
 
 <script>
