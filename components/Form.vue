@@ -1,6 +1,6 @@
 <template lang="pug">
-  form.form(@submit="submitForm" netlify netlify-honeypot="bot-field")
-    .input(type="hidden" name="form-name" value="contact")
+  form.form(@submit="submitForm" netlify netlify-honeypot="bot-field" method="post")
+    .input(type="hidden" name="form-name" value="contact-form")
     .form__wrapper
       .form__row
         .input-wrapper(:class="{active: name.length > 0}")
