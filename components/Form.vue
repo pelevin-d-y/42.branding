@@ -1,6 +1,5 @@
 <template lang="pug">
-  form.form(@submit="submitForm" netlify netlify-honeypot="bot-field" method="post")
-    input(type="hidden" name="form-name" value="contact-form")
+  form.form(@submit="submitForm")
     .form__wrapper
       .form__row
         .input-wrapper(:class="{active: name.length > 0}")
@@ -63,17 +62,40 @@ export default {
     },
 
     submitForm(e) {
-
+      e.preventDefault();
       this.$validator.validateAll().then((result) => {
         if (result) {
           console.log('valid')
-
+          this.postForm();
           return;
         }
-        e.preventDefault();
+
         console.warn('Not valid')
       });
-    }
+    },
+
+    postForm(){
+      var req = new XMLHttpRequest();
+      req.open("POST","/sendcontacts",true);
+      req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      req.onreadystatechange = function() {
+        if(req.readyState == XMLHttpRequest.DONE && req.status == 200) {
+        console.log("contacts send");
+      }
+     }
+     ///
+     var data = this.encode("form-name")+"=" + this.encode("contact-form")+"&"
+     +this.encode("name")+"="+this.encode(this.name)+"&"
+     +this.encode("email")+"="+this.encode(this.email)+"&"
+     +this.encode("message")+"="+this.encode(this.message);
+     console.log(data);
+     req.send(data);
+   },
+
+   encode(str){
+     return encodeURIComponent(str).replace("%20","+");
+   }
+
   }
 }
 </script>
