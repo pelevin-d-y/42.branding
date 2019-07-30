@@ -113,7 +113,7 @@ export default {
   &__input {
     height: 64px;
     width: 100%;
-    border: 0.5px solid $grayDark;
+    border: 0.7px solid $grayDark;
     padding: 16px;
     box-sizing: border-box;
     background-color: $white;
