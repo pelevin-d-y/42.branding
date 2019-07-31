@@ -191,9 +191,9 @@ export default {
     }
 
     &:after {
-      top: -1px;
+      top: -2px;
       right: -10px;
-      height: 47px;
+      height: 49px;
       width: 8px;
       border-left: 8px solid $black;
       border-bottom: none;
