@@ -89,7 +89,6 @@ export default {
         this.$emit('toggleModal', req.status)
         this.clearForm()
       } else {
-        console.log("Error", req.statusText)
         this.$emit('toggleModal', req.status)
       }
      }
