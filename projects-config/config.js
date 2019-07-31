@@ -186,22 +186,22 @@ export default [
     live: "bitcannery.net",
     images: []
   },
-  {
-    id: 10,
-    title: 'Smartomato',
-    name: 'smartomato',
-    imagesComponent: 'default',
-    textBlocks: [
-      {
-        title: "",
-        text: "Smartomato is a user friendly online ordering system for individual restaurants, multi-store chains, takeaways, cafes, convenience stores and franchises. We've developed bespoke application for web and mobile devices for this project. Google maps service has been used to get geolocation and calculate distances. On this project, we got familiar with order logic, placement, cancellation and customization."
-      }
-    ],
-    services: [
-      'React.JS',
-      'Ruby-on-Rails',
-    ],
-    live: "smartomato.ru",
-    images: []
-  }
+  // {
+  //   id: 10,
+  //   title: 'Smartomato',
+  //   name: 'smartomato',
+  //   imagesComponent: 'default',
+  //   textBlocks: [
+  //     {
+  //       title: "",
+  //       text: "Smartomato is a user friendly online ordering system for individual restaurants, multi-store chains, takeaways, cafes, convenience stores and franchises. We've developed bespoke application for web and mobile devices for this project. Google maps service has been used to get geolocation and calculate distances. On this project, we got familiar with order logic, placement, cancellation and customization."
+  //     }
+  //   ],
+  //   services: [
+  //     'React.JS',
+  //     'Ruby-on-Rails',
+  //   ],
+  //   live: "smartomato.ru",
+  //   images: []
+  // }
 ]
