@@ -39,6 +39,7 @@ export default {
 
   methods: {
     toggleModal(status) {
+      console.log('status', status)
       if (status === 200 ) {
         this.modalText = "Your message has been sent!"
       } else {
