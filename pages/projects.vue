@@ -119,13 +119,13 @@ export default {
           src: require('~/assets/images/projects-jpg/bitcannery.jpg'),
           srcWebp: require('~/assets/images/projects-webp/bitcannery.webp')
         },
-        {
-          index: 10,
-          title: 'Smartomato',
-          subtitle: 'Full stack development',
-          src: require('~/assets/images/projects-jpg/smartomato.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/smartomato.webp')
-        }
+        // {
+        //   index: 10,
+        //   title: 'Smartomato',
+        //   subtitle: 'Full stack development',
+        //   src: require('~/assets/images/projects-jpg/smartomato.jpg'),
+        //   srcWebp: require('~/assets/images/projects-webp/smartomato.webp')
+        // }
       ],
       buttonsBlocked: false,
       direction: 'left',
