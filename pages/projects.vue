@@ -59,14 +59,14 @@ export default {
         {
           index: 1,
           title: 'Mixfit',
-          subtitle: 'Full stack develepment',
+          subtitle: 'Full stack development',
           src: require('~/assets/images/projects-jpg/Mixfit.jpg'),
           srcWebp: require('~/assets/images/projects-webp/Mixfit.webp')
         },
         {
           index: 2,
           title: 'Matter',
-          subtitle: 'Full stack develepment',
+          subtitle: 'Full stack development',
           src: require('~/assets/images/projects-jpg/matter.jpg'),
           srcWebp: require('~/assets/images/projects-webp/matter.webp')
         },
@@ -87,7 +87,7 @@ export default {
         {
           index: 5,
           title: 'Forge',
-          subtitle: 'Full stack develepment',
+          subtitle: 'Full stack development',
           src: require('~/assets/images/projects-jpg/forge.jpg'),
           srcWebp: require('~/assets/images/projects-webp/forge.webp')
         },
@@ -101,14 +101,14 @@ export default {
         {
           index: 7,
           title: 'Statebird creative',
-          subtitle: 'Full stack develepment',
+          subtitle: 'Full stack development',
           src: require('~/assets/images/projects-jpg/statebird.jpg'),
           srcWebp: require('~/assets/images/projects-webp/statebird.webp')
         },
         {
           index: 8,
           title: 'Uptime connect',
-          subtitle: 'Full stack develepment',
+          subtitle: 'Full stack development',
           src: require('~/assets/images/projects-jpg/uptime.jpg'),
           srcWebp: require('~/assets/images/projects-webp/uptime.webp')
         },
@@ -122,7 +122,7 @@ export default {
         {
           index: 10,
           title: 'Smartomato',
-          subtitle: 'Full stack develepment',
+          subtitle: 'Full stack development',
           src: require('~/assets/images/projects-jpg/smartomato.jpg'),
           srcWebp: require('~/assets/images/projects-webp/smartomato.webp')
         }
