@@ -73,6 +73,12 @@ export default {
       });
     },
 
+    clearForm() {
+      this.name = ''
+      this.email = ''
+      this.message = ''
+    },
+
     postForm() {
       var req = new XMLHttpRequest();
       req.open("POST","/sendcontacts", true);
@@ -80,9 +86,11 @@ export default {
       req.onreadystatechange = (evt) => {
       if (req.readyState == XMLHttpRequest.DONE && req.status == 200) {
         console.log("contacts send");
-        this.$emit('toggleModal')
+        this.$emit('toggleModal', req.status)
+        this.clearForm()
       } else {
         console.log("Error", req.statusText)
+        this.$emit('toggleModal', req.status)
       }
      }
      ///

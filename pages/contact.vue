@@ -14,7 +14,7 @@
           a.link(href="mailto:hello@42.works")
             | hello@42.works
     transition(name="fade")
-      Modal(v-if="showModal" :toggleModal="toggleModal")
+      Modal(v-if="showModal" :toggleModal="toggleModal" :modalText="modalText")
 </template>
 
 <script>
@@ -32,12 +32,19 @@ export default {
 
   data() {
     return {
-      showModal: false
+      showModal: false,
+      modalText: ''
     }
   },
 
   methods: {
-    toggleModal() {
+    toggleModal(status) {
+      if (status === 200 ) {
+        this.modalText = "Your message has been sent!"
+      } else {
+        this.modalText = "The message has not been sent. Please try again later"
+      }
+
       this.showModal = !this.showModal
     }
   }

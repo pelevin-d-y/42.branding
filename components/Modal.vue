@@ -3,14 +3,15 @@
     .modal-wrapper
       .close(@click="toggleModal")
       .text
-        | Your message has been sent!
+        | {{ modalText }}
     .overlay(@click="toggleModal")
 </template>
 
 <script>
 export default {
   props: {
-    toggleModal: Function
+    toggleModal: Function,
+    modalText: String
   }
 }
 </script>
@@ -88,13 +89,14 @@ export default {
 
   @media(max-width: 768px) {
     .close {
-      top: 16px;
-      right: 20px;
+      top: 13px;
+      right: 16px;
     }
 
     .modal-wrapper {
-      max-width: 365px;
-      min-height: 182px;
+      max-width: 296px;
+      min-height: 147px;
+      padding: 45px 45px;
     }
 
     .text {
