@@ -88,7 +88,7 @@ export default {
 
   .what-we-do {
     padding-top: 73px;
-    padding-bottom: 104px;
+    padding-bottom: 74px;
 
     border-bottom: 0.5px solid #DBDBDB;
   }
@@ -97,6 +97,15 @@ export default {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+
+  }
+
+  .what-we-do__list {
+    margin-bottom: 30px;
+  }
+
+  .what-we-do__list:first-child {
+    margin-right: 20px;
   }
 
   .what-we-do__items {
