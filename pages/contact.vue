@@ -6,24 +6,47 @@
         .container
           .title
             | Drop us a line
-          Form
+          Form(@toggleModal="toggleModal")
       .mail
         .container
           | Contact us:
           |
           a.link(href="mailto:hello@42.works")
             | hello@42.works
+    transition(name="fade")
+      Modal(v-if="showModal" :toggleModal="toggleModal" :modalText="modalText")
 </template>
 
 <script>
 import Form from '~/components/Form'
+import Modal from '~/components/Modal'
 
 export default {
   name: 'Contacts',
   layout: 'item-page',
 
   components: {
-    Form
+    Form,
+    Modal
+  },
+
+  data() {
+    return {
+      showModal: false,
+      modalText: ''
+    }
+  },
+
+  methods: {
+    toggleModal(status) {
+      if (status === 200 ) {
+        this.modalText = "Your message has been sent!"
+      } else {
+        this.modalText = "The message has not been sent. Please try again later"
+      }
+
+      this.showModal = !this.showModal
+    }
   }
 }
 </script>
@@ -83,6 +106,16 @@ export default {
   .mail .link {
     text-decoration: none;
     color: #3431DC;
+  }
+
+  .fade-enter,
+  .fade-leave-active {
+    opacity: 0;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .5s ease
   }
 
   @media (max-width: 1024px) {

@@ -65,7 +65,6 @@ export default {
       e.preventDefault();
       this.$validator.validateAll().then((result) => {
         if (result) {
-          console.log('valid')
           this.postForm();
           return;
         }
@@ -74,13 +73,24 @@ export default {
       });
     },
 
-    postForm(){
+    clearForm() {
+      this.name = ''
+      this.email = ''
+      this.message = ''
+    },
+
+    postForm() {
       var req = new XMLHttpRequest();
-      req.open("POST","/sendcontacts",true);
+      req.open("POST","/sendcontacts", true);
       req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      req.onreadystatechange = function() {
-        if(req.readyState == XMLHttpRequest.DONE && req.status == 200) {
+      req.onreadystatechange = (evt) => {
+      if (req.readyState == XMLHttpRequest.DONE && req.status == 200) {
         console.log("contacts send");
+        this.$emit('toggleModal', req.status)
+        this.clearForm()
+      } else {
+        console.log("Error", req.statusText)
+        this.$emit('toggleModal', req.status)
       }
      }
      ///
@@ -92,7 +102,7 @@ export default {
      req.send(data);
    },
 
-   encode(str){
+   encode(str) {
      return encodeURIComponent(str).replace("%20","+");
    }
 
