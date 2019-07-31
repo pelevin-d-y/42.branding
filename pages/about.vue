@@ -18,9 +18,9 @@
                 | Services
               ul.what-we-do__items
                 li.what-we-do__item
-                  | Website Development
-                li.what-we-do__item
                   | Ui/Ux Design
+                li.what-we-do__item
+                  | Fullstack development
                 li.what-we-do__item
                   | Creative Direction
                 li.what-we-do__item
@@ -30,13 +30,13 @@
                 | Solutions
               ul.what-we-do__items
                 li.what-we-do__item
-                  | Mobile Applications
+                  | Ruby on Rails
+                li.what-we-do__item
+                  | Node
+                li.what-we-do__item
+                  | React / React Native / Vue
                 li.what-we-do__item
                   | Branding
-                li.what-we-do__item
-                  | Unity Development
-                li.what-we-do__item
-                  | Email Templates
       .how-we-work
         .container
           h2.about__title
