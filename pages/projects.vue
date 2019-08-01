@@ -43,6 +43,7 @@
 <script>
 import sliderBtnLeft from '~/assets/images/slider-btn-left.svg?inline'
 import sliderBtnRight from '~/assets/images/slider-btn-right.svg?inline'
+import config from '~/projects-config/config'
 
 export default {
   layout: 'item-page',
@@ -53,80 +54,22 @@ export default {
     sliderBtnRight
   },
 
+  asyncData (context) {
+    return {
+      slides: config.map(project => {
+        return {
+          index: project.id,
+          title: project.title,
+          subtitle: project.subtitle,
+          src: require(`~/assets/images/projects-jpg/${project.sliderImages.jpg}`),
+          srcWebp: require(`~/assets/images/projects-webp/${project.sliderImages.webp}`),
+        }
+      })
+    }
+  },
+
   data () {
     return {
-      slides: [
-        {
-          index: 1,
-          title: 'Mixfit',
-          subtitle: 'Full stack development',
-          src: require('~/assets/images/projects-jpg/Mixfit.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/Mixfit.webp')
-        },
-        {
-          index: 2,
-          title: 'Matter',
-          subtitle: 'Full stack development',
-          src: require('~/assets/images/projects-jpg/matter.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/matter.webp')
-        },
-        {
-          index: 3,
-          title: 'IAMIP',
-          subtitle: 'Frontend development',
-          src: require('~/assets/images/projects-jpg/iMap.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/iMap.webp')
-        },
-        {
-          index: 4,
-          title: 'Hammer for Mac',
-          subtitle: 'Development',
-          src: require('~/assets/images/projects-jpg/hammer.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/hammer.webp')
-        },
-        {
-          index: 5,
-          title: 'Forge',
-          subtitle: 'Full stack development',
-          src: require('~/assets/images/projects-jpg/forge.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/forge.webp')
-        },
-        {
-          index: 6,
-          title: 'Chisel',
-          subtitle: 'Frontend development',
-          src: require('~/assets/images/projects-jpg/chisel.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/chisel.webp')
-        },
-        {
-          index: 7,
-          title: 'Statebird creative',
-          subtitle: 'Full stack development',
-          src: require('~/assets/images/projects-jpg/statebird.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/statebird.webp')
-        },
-        {
-          index: 8,
-          title: 'Uptime connect',
-          subtitle: 'Full stack development',
-          src: require('~/assets/images/projects-jpg/uptime.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/uptime.webp')
-        },
-        {
-          index: 9,
-          title: 'Bitcannery',
-          subtitle: 'Blockchain',
-          src: require('~/assets/images/projects-jpg/bitcannery.jpg'),
-          srcWebp: require('~/assets/images/projects-webp/bitcannery.webp')
-        },
-        // {
-        //   index: 10,
-        //   title: 'Smartomato',
-        //   subtitle: 'Full stack development',
-        //   src: require('~/assets/images/projects-jpg/smartomato.jpg'),
-        //   srcWebp: require('~/assets/images/projects-webp/smartomato.webp')
-        // }
-      ],
       buttonsBlocked: false,
       direction: 'left',
       canSlide: true,

@@ -2,6 +2,11 @@ export default [
   {
     id: 1,
     title: "Mixfit",
+    subtitle: "Full stack development",
+    sliderImages: {
+      jpg: 'Mixfit.jpg',
+      webp: 'Mixfit.webp'
+    },
     name: 'mixfit',
     imagesComponent: 'mixfit',
     textBlocks: [
@@ -25,6 +30,11 @@ export default [
   {
     id: 2,
     title: 'Matter',
+    subtitle: "Full stack development",
+    sliderImages: {
+      jpg: 'matter.jpg',
+      webp: 'matter.webp'
+    },
     name: 'matter',
     imagesComponent: '',
     textBlocks: [
@@ -50,6 +60,11 @@ export default [
   {
     id: 3,
     title: 'IAMIP',
+    subtitle: 'Frontend development',
+    sliderImages: {
+      jpg: 'iMap.jpg',
+      webp: 'iMap.webp'
+    },
     name: 'iamip',
     imagesComponent: 'default',
     textBlocks: [
@@ -71,6 +86,11 @@ export default [
   {
     id: 4,
     title: 'Hammer for Mac',
+    subtitle: 'Development',
+    sliderImages: {
+      jpg: 'hammer.jpg',
+      webp: 'hammer.webp'
+    },
     name: 'hammer',
     imagesComponent: 'default',
     textBlocks: [
@@ -89,6 +109,11 @@ export default [
   {
     id: 5,
     title: 'Forge',
+    subtitle: 'Full stack development',
+    sliderImages: {
+      jpg: 'forge.jpg',
+      webp: 'forge.webp'
+    },
     name: 'forge',
     imagesComponent: 'default',
     textBlocks: [
@@ -107,6 +132,11 @@ export default [
   {
     id: 6,
     title: 'Chisel',
+    subtitle: 'Frontend development',
+    sliderImages: {
+      jpg: 'chisel.jpg',
+      webp: 'chisel.webp'
+    },
     name: 'chisel',
     imagesComponent: 'default',
     textBlocks: [
@@ -124,6 +154,11 @@ export default [
   {
     id: 7,
     title: 'Statebird creative',
+    subtitle: 'Full stack development',
+    sliderImages: {
+      jpg: 'statebird.jpg',
+      webp: 'statebird.webp'
+    },
     name: 'statebird',
     imagesComponent: 'default',
     textBlocks: [
@@ -150,6 +185,11 @@ export default [
   {
     id: 8,
     title: 'Uptime connect',
+    subtitle: 'Full stack development',
+    sliderImages: {
+      jpg: 'uptime.jpg',
+      webp: 'uptime.webp'
+    },
     name: 'uptime',
     imagesComponent: 'default',
     textBlocks: [
@@ -170,6 +210,11 @@ export default [
     id: 9,
     title: 'Bitcannery',
     name: 'bitcannery',
+    subtitle: 'Blockchain',
+    sliderImages: {
+      jpg: 'bitcannery.jpg',
+      webp: 'bitcannery.webp'
+    },
     imagesComponent: 'default',
     textBlocks: [
       {
@@ -185,23 +230,5 @@ export default [
     ],
     live: "bitcannery.net",
     images: []
-  },
-  // {
-  //   id: 10,
-  //   title: 'Smartomato',
-  //   name: 'smartomato',
-  //   imagesComponent: 'default',
-  //   textBlocks: [
-  //     {
-  //       title: "",
-  //       text: "Smartomato is a user friendly online ordering system for individual restaurants, multi-store chains, takeaways, cafes, convenience stores and franchises. We've developed bespoke application for web and mobile devices for this project. Google maps service has been used to get geolocation and calculate distances. On this project, we got familiar with order logic, placement, cancellation and customization."
-  //     }
-  //   ],
-  //   services: [
-  //     'React.JS',
-  //     'Ruby-on-Rails',
-  //   ],
-  //   live: "smartomato.ru",
-  //   images: []
-  // }
+  }
 ]
