@@ -50,7 +50,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/yandex-metrika',
+      {
+        id: '57494424',
+        webvisor: true,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      }
+    ],
   ],
 
   styleResources: {
