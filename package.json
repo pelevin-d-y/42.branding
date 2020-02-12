@@ -13,6 +13,7 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@nuxtjs/yandex-metrika": "^1.0.3",
     "body-scroll-lock": "^2.6.4",
     "cross-env": "^5.2.0",
     "normalize.css": "^8.0.1",
