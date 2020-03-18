@@ -3,12 +3,12 @@
     .gradient
     .content
       .form-container
-        .container
+        .gradient-container
           .title
             | Drop us a line
           Form(@toggleModal="toggleModal")
       .mail
-        .container
+        .gradient-container
           | Contact us:
           |
           a.link(href="mailto:hello@42.works")
@@ -55,12 +55,6 @@ export default {
 <style lang="scss" scoped>
   .content {
     padding-top: 70px;
-  }
-
-  .container {
-    max-width: 911px;
-    padding-left: 86px;
-    padding-right: 280px;
   }
 
   .text {
@@ -117,14 +111,6 @@ export default {
   .fade-enter-active,
   .fade-leave-active {
     transition: opacity .5s ease
-  }
-
-  @media (max-width: 1024px) {
-    .container {
-      max-width: 530px;
-      padding-right: 24px;
-      padding-left: 24px;
-    }
   }
 
   @media (max-width: 768px) {
