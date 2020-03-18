@@ -15,6 +15,9 @@
             router-link.nav-link(to="/about")
               | About
           li.menu-item(@click="toggleMenu")
+            router-link.nav-link(to="/team")
+              | Team
+          li.menu-item(@click="toggleMenu")
             router-link.nav-link(to="/contact")
               | Contact
       .close-menu(@click="toggleMenu")
