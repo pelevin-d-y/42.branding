@@ -7,12 +7,7 @@
           .title
             | Drop us a line
           Form(@toggleModal="toggleModal")
-      .mail
-        .gradient-container
-          | Contact us:
-          |
-          a.link(href="mailto:hello@42.works")
-            | hello@42.works
+      Mail
     transition(name="fade")
       Modal(v-if="showModal" :toggleModal="toggleModal" :modalText="modalText")
 </template>
@@ -20,6 +15,7 @@
 <script>
 import Form from '~/components/Form'
 import Modal from '~/components/Modal'
+import Mail from '~/components/Mail'
 
 export default {
   name: 'Contacts',
@@ -27,7 +23,8 @@ export default {
 
   components: {
     Form,
-    Modal
+    Modal,
+    Mail
   },
 
   data() {
@@ -39,7 +36,6 @@ export default {
 
   methods: {
     toggleModal(status) {
-      console.log('status', status)
       if (status === 200 ) {
         this.modalText = "Your message has been sent!"
       } else {
@@ -72,7 +68,6 @@ export default {
   .form-container {
     padding-top: 72px;
     padding-bottom: 96px;
-    border-bottom: 0.5px solid #DBDBDB;
   }
 
   .title {
@@ -84,23 +79,6 @@ export default {
     font-weight: bold;
 
     color: #000105;
-  }
-
-  .mail {
-    padding-top: 72px;
-    padding-bottom: 103px;
-
-    font-size: 40px;
-    line-height: 56px;
-    letter-spacing: 0.01em;
-    font-weight: bold;
-
-    color: $black;
-  }
-
-  .mail .link {
-    text-decoration: none;
-    color: #3431DC;
   }
 
   .fade-enter,
@@ -135,14 +113,6 @@ export default {
     .form-container {
       padding-top: 60px;
       padding-bottom: 60px;
-    }
-
-    .mail {
-      padding-top: 60px;
-      padding-bottom: 60px;
-
-      font-size: 28px;
-      line-height: 36px;
     }
   }
 </style>
