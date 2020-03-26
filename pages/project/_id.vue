@@ -188,6 +188,7 @@ export default {
 
     .project-footer__right {
       padding-top: 60px;
+      width: 100%;
     }
 
     .live-link {

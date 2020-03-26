@@ -1,6 +1,34 @@
 export default [
   {
     id: 1,
+    title: "Sicilia",
+    subtitle: "Full stack development",
+    sliderImages: {
+      jpg: 'sicilia.jpg',
+      webp: 'sicilia.webp'
+    },
+    name: 'sicilia',
+    imagesComponent: 'default',
+    textBlocks: [
+      {
+        title: "What",
+        text: "Lorem ipsum "
+      },
+      {
+        title: "How",
+        text: "We've built an end-to-end production-quality system for Showcase Demonstration of a conversational UI intelligent assistant mobile app, connected drink dispensing device with digital display and full API-first platform layer - in just 4 months!"
+      }
+    ],
+    services: [
+      'React.js frontend development',
+      'React Native development',
+      'Raspberry Pi integration',
+      'Blockchain integration'
+    ],
+    live: "gomixfit.com"
+  },
+  {
+    id: 2,
     title: "Mixfit",
     subtitle: "Full stack development",
     sliderImages: {
@@ -28,7 +56,7 @@ export default [
     live: "gomixfit.com"
   },
   {
-    id: 2,
+    id: 3,
     title: 'Matter',
     subtitle: "Full stack development",
     sliderImages: {
@@ -58,7 +86,7 @@ export default [
     images: []
   },
   {
-    id: 3,
+    id: 4,
     title: 'IAMIP',
     subtitle: 'Frontend development',
     sliderImages: {
@@ -84,7 +112,7 @@ export default [
     images: []
   },
   {
-    id: 4,
+    id: 5,
     title: 'Hammer for Mac',
     subtitle: 'Development',
     sliderImages: {
@@ -107,7 +135,7 @@ export default [
     images: []
   },
   {
-    id: 5,
+    id: 6,
     title: 'Forge',
     subtitle: 'Full stack development',
     sliderImages: {
@@ -130,7 +158,7 @@ export default [
     images: []
   },
   {
-    id: 6,
+    id: 7,
     title: 'Chisel',
     subtitle: 'Frontend development',
     sliderImages: {
@@ -152,7 +180,7 @@ export default [
     images: []
   },
   {
-    id: 7,
+    id: 8,
     title: 'Statebird creative',
     subtitle: 'Full stack development',
     sliderImages: {
@@ -183,7 +211,7 @@ export default [
     images: []
   },
   {
-    id: 8,
+    id: 9,
     title: 'Uptime connect',
     subtitle: 'Full stack development',
     sliderImages: {
@@ -207,7 +235,7 @@ export default [
     images: []
   },
   {
-    id: 9,
+    id: 10,
     title: 'Bitcannery',
     name: 'bitcannery',
     subtitle: 'Blockchain',
