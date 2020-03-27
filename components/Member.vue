@@ -20,16 +20,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .member {
+    text-align: center;
+
+    max-width: 175px;
+    width: 100%;
+  }
+
   .image img {
-    width: 208px;
-    height: 208px;
-    margin-bottom: 18px;
+    width: 161px;
+    height: 161px;
+    margin-bottom: 7px;
   }
 
   .name {
     color: #3431DC;
     font-size: 16px;
-    line-height: 40px;
+    line-height: 28px;
     text-align: center;
   }
 
@@ -38,5 +45,17 @@ export default {
     line-height: 32px;
     text-align: center;
     color: #000105;
+  }
+
+  @media (max-width: 560px) {
+    .member {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image img {
+      width: 180px;
+      height: 180px;
+    }
   }
 </style>

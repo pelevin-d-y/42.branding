@@ -9,7 +9,7 @@
               | Our team
             .text
               | 42 was built to be different. An alternative to the large agency. We are a collective of design-obsessed digital junkies, based in Rostov-on-Don. Our focus is to create new interactive experiences for users; striking the perfect balance between usability and aesthetic. We seek to push creative and developmental boundaries, while bringing ambitious ideas to life.
-      .gradient-container
+      .gradient-container.team-container
         .team-list
           ul
             li.team-member(v-for="member in team")
@@ -87,7 +87,7 @@ export default {
   }
 
   .title {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-size: 40px;
     line-height: 56px;
     color: #000000;
@@ -106,20 +106,30 @@ export default {
   }
 
   .team-list ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    max-width: 498px;
     width: 100%;
-    margin-left: -10px;
+  }
+
+  .team-container {
+    padding-right: 198px;
   }
 
   .team-member {
     display: inline-block;
-    margin-bottom: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-bottom: 55px;
+  }
+
+  @media (max-width: 1024px) {
+    .team-container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .team-list ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
@@ -149,6 +159,12 @@ export default {
     .text {
       font-size: 18px;
       line-height: 32px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .team-list ul {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 </style>
