@@ -1,31 +1,37 @@
 export default [
   {
     id: 1,
-    title: "Sicilia",
+    title: 'Matter',
     subtitle: "Full stack development",
     sliderImages: {
-      jpg: 'sicilia.jpg',
-      webp: 'sicilia.webp'
+      jpg: 'matter.jpg',
+      webp: 'matter.webp'
     },
-    name: 'sicilia',
+    name: 'matter',
     imagesComponent: 'default',
     textBlocks: [
       {
         title: "What",
-        text: "Lorem ipsum "
+        text: "Next generation music streaming service with revenue splits handled by blockchain — international project that we co-founded and actively developing with our American partners."
       },
       {
-        title: "How",
-        text: "We've built an end-to-end production-quality system for Showcase Demonstration of a conversational UI intelligent assistant mobile app, connected drink dispensing device with digital display and full API-first platform layer - in just 4 months!"
+        title: "",
+        text: "Matter is a music platform that puts creators first by focusing on their needs, providing deep engagement opportunities and utilizing technology to deliver a frictionless transfer of value to all users."
+      },
+      {
+        title: "",
+        text: "Matter aims to usher content creators into a new realm of possibility by providing tools for growth and fostering an environment where artists and their fans can thrive."
       }
     ],
     services: [
-      'React.js frontend development',
-      'React Native development',
-      'Raspberry Pi integration',
-      'Blockchain integration'
+      'Design',
+      'Node.js API development',
+      'Vue.js frontend development',
+      'Blockchain integration',
+      'iOS design and development'
     ],
-    live: "gomixfit.com"
+    live: "matter.online",
+    images: []
   },
   {
     id: 2,
@@ -57,36 +63,6 @@ export default [
   },
   {
     id: 3,
-    title: 'Matter',
-    subtitle: "Full stack development",
-    sliderImages: {
-      jpg: 'matter.jpg',
-      webp: 'matter.webp'
-    },
-    name: 'matter',
-    imagesComponent: 'default',
-    textBlocks: [
-      {
-        title: "What",
-        text: "Next generation music streaming service with revenue splits handled by blockchain — international project that we co-founded and actively developing while our American partners are closely working with SEC on getting permission to legally launch it."
-      },
-      {
-        title: "",
-        text: "Matter is a music platform that puts creators first by focusing on their needs, providing deep engagement opportunities and utilizing technology to deliver a frictionless transfer of value to all users."
-      },
-    ],
-    services: [
-      'Design',
-      'Node.js API development',
-      'Vue.js frontend development',
-      'Blockchain integration',
-      'iOS design and development'
-    ],
-    live: "matter.online",
-    images: []
-  },
-  {
-    id: 4,
     title: 'IAMIP',
     subtitle: 'Frontend development',
     sliderImages: {
@@ -112,7 +88,7 @@ export default [
     images: []
   },
   {
-    id: 5,
+    id: 4,
     title: 'Hammer for Mac',
     subtitle: 'Development',
     sliderImages: {
@@ -135,7 +111,7 @@ export default [
     images: []
   },
   {
-    id: 6,
+    id: 5,
     title: 'Forge',
     subtitle: 'Full stack development',
     sliderImages: {
@@ -158,7 +134,7 @@ export default [
     images: []
   },
   {
-    id: 7,
+    id: 6,
     title: 'Chisel',
     subtitle: 'Frontend development',
     sliderImages: {
@@ -180,7 +156,7 @@ export default [
     images: []
   },
   {
-    id: 8,
+    id: 7,
     title: 'Statebird creative',
     subtitle: 'Full stack development',
     sliderImages: {
@@ -211,7 +187,7 @@ export default [
     images: []
   },
   {
-    id: 9,
+    id: 8,
     title: 'Uptime connect',
     subtitle: 'Full stack development',
     sliderImages: {
@@ -235,7 +211,7 @@ export default [
     images: []
   },
   {
-    id: 10,
+    id: 9,
     title: 'Bitcannery',
     name: 'bitcannery',
     subtitle: 'Blockchain',
@@ -258,5 +234,33 @@ export default [
     ],
     live: "bitcannery.net",
     images: []
-  }
+  },
+  {
+    id: 10,
+    title: "Sicilia",
+    subtitle: "Full stack development",
+    sliderImages: {
+      jpg: 'sicilia.jpg',
+      webp: 'sicilia.webp'
+    },
+    name: 'sicilia',
+    imagesComponent: 'default',
+    textBlocks: [
+      {
+        title: "What",
+        text: "Sicilia is a user friendly online ordering system for local chain of restaurants."
+      },
+      {
+        title: "",
+        text: "We've developed bespoke application for web and mobile devices for this project. Google maps service has been used to get geolocation and calculate distances. On this project, we got familiar with order logic, placement, cancellation and customization."
+      }
+    ],
+    services: [
+      'React.js frontend development',
+      'React Native development',
+      'Ruby on Rails',
+      'GraphQL'
+    ],
+    live: "pizza-sicilia.ru"
+  },
 ]
