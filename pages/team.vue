@@ -15,8 +15,6 @@
             li.team-member(v-for="member in team")
               Member(:member="member")
       Mail
-
-
 </template>
 
 <script>
@@ -36,39 +34,74 @@ export default {
     return {
       team: [
         {
-          image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
+          image: 'boris.png',
+          name: 'Boris Adimov',
+          position: 'CTO'
+        },
+        {
+          image: 'alexander.png',
+          name: 'Belokon Alexandr',
+          position: 'Teamlead, Fullstack Developer'
+        },
+        {
+          image: 'eugene.png',
+          name: 'Eugene Taktarov',
+          position: 'Teamlead, Fullstack Developer'
+        },
+        {
+          image: 'konstantine.png',
+          name: 'Konstantine Kim',
+          position: 'Senior Backend Developer'
         },
         {
           image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
+          name: 'Dmitry Surkov',
+          position: 'Senior Fullstack Developer'
+        },
+        {
+          image: 'roman.png',
+          name: 'Roman Kolpakov',
+          position: 'Senior Frontend Developer'
+        },
+        {
+          image: 'rita.png',
+          name: 'Margarita Popova',
+          position: 'UI/UX Lead'
+        },
+        {
+          image: 'artyom.png',
+          name: 'Artyom Irza',
+          position: 'Middle Backend Developer'
+        },
+        {
+          image: 'denis.png',
+          name: 'Denis Pelevin',
+          position: 'Middle Frontend Developer'
+        },
+        {
+          image: 'arseniy.png',
+          name: 'Arseniy Adimov',
+          position: 'Middle Backend Developer'
         },
         {
           image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
+          name: 'Igor Bostan',
+          position: 'Middle Backend Developer'
         },
         {
           image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
+          name: 'Victor Ivanov',
+          position: 'Junior Frontend Developer'
+        },
+        {
+          image: 'eugenia.png',
+          name: 'Eugenia Skryada',
+          position: 'Junior Frontend Developer'
         },
         {
           image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
-        },
-        {
-          image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
-        },
-        {
-          image: 'image.png',
-          name: 'Name Namename',
-          position: 'Mega Director'
+          name: 'Evgenia Skorik',
+          position: 'Designer'
         }
       ]
     }
