@@ -31,6 +31,9 @@ export default {
     width: 161px;
     height: 161px;
     margin-bottom: 7px;
+
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .name {
