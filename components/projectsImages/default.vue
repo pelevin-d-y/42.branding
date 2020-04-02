@@ -110,5 +110,10 @@ export default {
       width: 121%;
       margin-left: -11%;
     }
+
+    .matter img {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 </style>

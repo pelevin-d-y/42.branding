@@ -64,7 +64,7 @@ export default [
       webp: 'matter.webp'
     },
     name: 'matter',
-    imagesComponent: '',
+    imagesComponent: 'default',
     textBlocks: [
       {
         title: "What",
