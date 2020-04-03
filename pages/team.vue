@@ -34,72 +34,72 @@ export default {
     return {
       team: [
         {
-          image: 'boris.png',
+          image: 'boris.jpg',
           name: 'Boris Adimov',
           position: 'CTO'
         },
         {
-          image: 'alexander.png',
+          image: 'alexander.jpg',
           name: 'Belokon Alexandr',
           position: 'Teamlead, Fullstack Developer'
         },
         {
-          image: 'eugene.png',
+          image: 'eugene.jpg',
           name: 'Eugene Taktarov',
           position: 'Teamlead, Fullstack Developer'
         },
         {
-          image: 'konstantine.png',
+          image: 'konstantine.jpg',
           name: 'Konstantine Kim',
           position: 'Senior Backend Developer'
         },
         {
-          image: 'image.png',
+          image: 'dima.jpg',
           name: 'Dmitry Surkov',
           position: 'Senior Fullstack Developer'
         },
         {
-          image: 'roman.png',
+          image: 'roman.jpg',
           name: 'Roman Kolpakov',
           position: 'Senior Frontend Developer'
         },
         {
-          image: 'rita.png',
+          image: 'rita.jpg',
           name: 'Margarita Popova',
           position: 'UI/UX Lead'
         },
         {
-          image: 'artyom.png',
+          image: 'artyom.jpg',
           name: 'Artyom Irza',
           position: 'Middle Backend Developer'
         },
         {
-          image: 'denis.png',
+          image: 'denis.jpg',
           name: 'Denis Pelevin',
           position: 'Middle Frontend Developer'
         },
         {
-          image: 'arseniy.png',
+          image: 'arseniy.jpg',
           name: 'Arseniy Adimov',
           position: 'Middle Backend Developer'
         },
         {
-          image: 'image.png',
+          image: 'igor.jpg',
           name: 'Igor Bostan',
           position: 'Middle Backend Developer'
         },
         {
-          image: 'image.png',
+          image: 'viktor.jpg',
           name: 'Victor Ivanov',
           position: 'Junior Frontend Developer'
         },
         {
-          image: 'eugenia.png',
+          image: 'eugenia.jpg',
           name: 'Eugenia Skryada',
           position: 'Junior Frontend Developer'
         },
         {
-          image: 'image.png',
+          image: 'eugenia-1.jpg',
           name: 'Evgenia Skorik',
           position: 'Designer'
         }
