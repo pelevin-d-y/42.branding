@@ -105,5 +105,15 @@ export default {
       margin-left: -41%;
       object-fit: contain;
     }
+
+    .sicilia img {
+      width: 121%;
+      margin-left: -11%;
+    }
+
+    .matter img {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 </style>
