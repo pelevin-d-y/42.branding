@@ -8,7 +8,7 @@ export default [
       webp: 'matter.webp'
     },
     name: 'matter',
-    imagesComponent: 'default',
+    imagesComponent: 'matter',
     textBlocks: [
       {
         title: "What",
@@ -244,7 +244,7 @@ export default [
       webp: 'sicilia.webp'
     },
     name: 'sicilia',
-    imagesComponent: 'default',
+    imagesComponent: 'sicilia',
     textBlocks: [
       {
         title: "What",
