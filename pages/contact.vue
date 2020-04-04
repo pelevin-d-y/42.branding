@@ -3,16 +3,11 @@
     .gradient
     .content
       .form-container
-        .container
+        .gradient-container
           .title
             | Drop us a line
           Form(@toggleModal="toggleModal")
-      .mail
-        .container
-          | Contact us:
-          |
-          a.link(href="mailto:hello@42.works")
-            | hello@42.works
+      Mail
     transition(name="fade")
       Modal(v-if="showModal" :toggleModal="toggleModal" :modalText="modalText")
 </template>
@@ -20,6 +15,7 @@
 <script>
 import Form from '~/components/Form'
 import Modal from '~/components/Modal'
+import Mail from '~/components/Mail'
 
 export default {
   name: 'Contacts',
@@ -27,7 +23,8 @@ export default {
 
   components: {
     Form,
-    Modal
+    Modal,
+    Mail
   },
 
   data() {
@@ -39,7 +36,6 @@ export default {
 
   methods: {
     toggleModal(status) {
-      console.log('status', status)
       if (status === 200 ) {
         this.modalText = "Your message has been sent!"
       } else {
@@ -57,12 +53,6 @@ export default {
     padding-top: 70px;
   }
 
-  .container {
-    max-width: 911px;
-    padding-left: 86px;
-    padding-right: 280px;
-  }
-
   .text {
     padding-top: 120px;
     padding-bottom: 96px;
@@ -78,7 +68,6 @@ export default {
   .form-container {
     padding-top: 72px;
     padding-bottom: 96px;
-    border-bottom: 0.5px solid #DBDBDB;
   }
 
   .title {
@@ -92,23 +81,6 @@ export default {
     color: #000105;
   }
 
-  .mail {
-    padding-top: 72px;
-    padding-bottom: 103px;
-
-    font-size: 40px;
-    line-height: 56px;
-    letter-spacing: 0.01em;
-    font-weight: bold;
-
-    color: $black;
-  }
-
-  .mail .link {
-    text-decoration: none;
-    color: #3431DC;
-  }
-
   .fade-enter,
   .fade-leave-active {
     opacity: 0;
@@ -117,14 +89,6 @@ export default {
   .fade-enter-active,
   .fade-leave-active {
     transition: opacity .5s ease
-  }
-
-  @media (max-width: 1024px) {
-    .container {
-      max-width: 530px;
-      padding-right: 24px;
-      padding-left: 24px;
-    }
   }
 
   @media (max-width: 768px) {
@@ -149,14 +113,6 @@ export default {
     .form-container {
       padding-top: 60px;
       padding-bottom: 60px;
-    }
-
-    .mail {
-      padding-top: 60px;
-      padding-bottom: 60px;
-
-      font-size: 28px;
-      line-height: 36px;
     }
   }
 </style>
