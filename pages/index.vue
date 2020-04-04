@@ -1,6 +1,6 @@
 <template lang="pug">
   .home(ref="home")
-    //- Tetris(v-if="isTetrisActive")
+    Tetris(v-if="isTetrisActive")
     .container
       .logo-wrapper
         .logo
