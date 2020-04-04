@@ -1,6 +1,6 @@
 <template lang="pug">
   .home(ref="home")
-    Tetris(v-if="isTetrisActive")
+    //- Tetris(v-if="isTetrisActive")
     .container
       .logo-wrapper
         .logo
@@ -17,9 +17,9 @@
           li.nav-item
             nuxt-link.nav-link(to="/about") About
           li.nav-item
+            nuxt-link.nav-link(to="/team") Team
+          li.nav-item
             nuxt-link.nav-link(to="/contact") Contact
-
-
 </template>
 
 <script>
@@ -154,6 +154,10 @@ export default {
     background: linear-gradient(180deg, #3431DC 0%, #615EEE 100%);
   }
 
+  .logo-wrapper {
+    padding-top: 40px;
+  }
+
   .container {
     position: relative;
     z-index: 10;
@@ -164,7 +168,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
 
-    max-width: 812px;
+    max-width: 750px;
     width: 100%;
     margin: 0 auto;
   }
@@ -176,7 +180,7 @@ export default {
   .nav-link {
     display: block;
 
-    font-size: 88px;
+    font-size: 70px;
     line-height: 80px;
     letter-spacing: 0.02em;
     text-decoration: none;
@@ -197,7 +201,7 @@ export default {
   }
 
   .nav-item {
-    margin-bottom: 55px;
+    margin-bottom: 34px;
 
     &:last-child {
         margin-bottom: 0;
@@ -228,7 +232,7 @@ export default {
   }
 
   .logo-text {
-    font-size: 18px;
+    font-size: 21px;
     line-height: 32px;
     letter-spacing: 0.01em;
 

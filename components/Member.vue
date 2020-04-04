@@ -37,15 +37,18 @@ export default {
   }
 
   .name {
+    margin-bottom: 3px;
+
     color: #3431DC;
     font-size: 16px;
     line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .position {
-    font-size: 21px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 130%;
     text-align: center;
     color: #000105;
   }

@@ -53,11 +53,11 @@ export default {
           name: 'Konstantine Kim',
           position: 'Senior Backend Developer'
         },
-        {
-          image: 'dima.jpg',
-          name: 'Dmitry Surkov',
-          position: 'Senior Fullstack Developer'
-        },
+        // {
+        //   image: 'dima.jpg',
+        //   name: 'Dmitry Surkov',
+        //   position: 'Senior Fullstack Developer'
+        // },
         {
           image: 'roman.jpg',
           name: 'Roman Kolpakov',
