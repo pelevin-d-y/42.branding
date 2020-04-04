@@ -3,13 +3,13 @@
     .gradient
     .content
       .who-we-are
-        .container
+        .gradient-container
           h2.about__title
             | Who we are
           .who-we-are__text.text
             | We are team of young and enthusiastic designers and developers. Core team members graduated from Southern Federal University's department of Mathematics, Mechanics and Computer Science. We have background in applied math, financial math methods, machine learning and computer vision.
       .what-we-do
-        .container
+        .gradient-container
           h2.about__title
             | What we do
           .what-we-do__lists
@@ -38,7 +38,7 @@
                 li.what-we-do__item
                   | Branding
       .how-we-work
-        .container
+        .gradient-container
           h2.about__title
             | How we work
           .how-we-work__text.text
@@ -56,12 +56,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .container {
-    max-width: 911px;
-    padding-left: 86px;
-    padding-right: 280px
-  }
-
   .about__title {
     margin-bottom: 24px;
 
@@ -133,14 +127,6 @@ export default {
   .how-we-work {
     padding-top: 72px;
     padding-bottom: 103px;
-  }
-
-  @media (max-width: 1024px) {
-    .container {
-      max-width: 530px;
-      padding-right: 24px;
-      padding-left: 24px;
-    }
   }
 
   @media (max-width: 768px) {
