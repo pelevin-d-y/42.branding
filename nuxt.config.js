@@ -43,7 +43,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~plugins/vee-validate.js', ssr: true}
+    {src: '~plugins/vee-validate.js', ssr: true},
+    {src: '~plugins/vue-lazyload.js'}
   ],
 
   /*
@@ -95,7 +96,7 @@ export default {
       });
     },
 
-    vendor: ['normalize.css', 'vee-validate']
+    vendor: ['normalize.css', 'vee-validate', 'vue-lazyload']
   },
 
   ...routerBase,

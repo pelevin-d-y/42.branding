@@ -1,20 +1,22 @@
 <template lang="pug">
   .wrapper
-    .image
-      img(:src="require(`~/static/images/sicilia/sicilia1.jpg`)" )
-    .image
-      img(:src="require(`~/static/images/sicilia/sicilia2.jpg`)" )
-    .image
-      img(:src="require(`~/static/images/sicilia/sicilia3.jpg`)" )
-    .image
-      img(:src="require(`~/static/images/sicilia/sicilia4.jpg`)" )
-    .image
-      img(:src="require(`~/static/images/sicilia/sicilia5.jpg`)" )
+    .image(v-lazy-container="{ selector: 'img' }")
+      img(:data-src="require(`~/static/images/sicilia/sicilia1.jpg`)")
+    .image(v-lazy-container="{ selector: 'img' }")
+      img(:data-src="require(`~/static/images/sicilia/sicilia2.jpg`)" )
+    .image(v-lazy-container="{ selector: 'img' }")
+      img(:data-src="require(`~/static/images/sicilia/sicilia3.jpg`)" )
+    .image(v-lazy-container="{ selector: 'img' }")
+      img(:data-src="require(`~/static/images/sicilia/sicilia4.jpg`)" )
+    .image(v-lazy-container="{ selector: 'img' }")
+      img(:data-src="require(`~/static/images/sicilia/sicilia5.jpg`)" )
 </template>
 
 <script>
 export default {
+  mounted() {
 
+  }
 }
 </script>
 
