@@ -51,7 +51,7 @@ export default {
 }
 
 .title-1 {
-  background: linear-gradient(#131219, #15131F);
+  background: none;
   margin-top: -70px;
   margin-bottom: -90px;
 }
@@ -88,6 +88,7 @@ export default {
     padding-bottom: 20px;
     margin-top: -30px;
     margin-bottom: -50px;
+    background: linear-gradient(#111016, #181625);
   }
 
   .title-2 {
