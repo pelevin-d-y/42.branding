@@ -52,8 +52,8 @@ export default {
 
 .title-1 {
   background: linear-gradient(#131219, #15131F);
-   margin-top: -60px;
-  margin-bottom: -60px;
+  margin-top: -70px;
+  margin-bottom: -90px;
 }
 
 .title-2 {
@@ -67,10 +67,38 @@ export default {
   margin-bottom: -60px;
 }
 
+@media (max-width: 1024px) {
+  .title-1 {
+    background: linear-gradient(#131219, #1B192A);
+  }
+
+  .title-2 {
+    background: linear-gradient(#8F70FC, #9577FD);
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 32px;
     line-height: 50px;
+  }
+
+  .title-1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -30px;
+    margin-bottom: -50px;
+  }
+
+  .title-2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -33px;
+    margin-bottom: -35px;
+  }
+
+  .title-3 {
+    margin-bottom: -19px;
   }
 }
 </style>

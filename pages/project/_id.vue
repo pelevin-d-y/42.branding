@@ -3,7 +3,7 @@
     .container
       h1.title
         | {{ project.title }}
-      .block(v-for="text in project.textBlocks" :key="text.title")
+      .block(v-for="text in project.textBlocks" :key="text.text")
         .subtitle(v-if="text.title")
           | {{ text.title }}
         .text
