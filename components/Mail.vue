@@ -1,10 +1,12 @@
 <template lang="pug">
-  .mail
+  .contacts
     .gradient-container
-      | Contact us:
-      |
+      .title
+        | Contact us:
       a.link(href="mailto:hello@42.works")
         | hello@42.works
+      a.link.phone(href="tel:+79996966550")
+        | +7(999)696-65-50
 </template>
 
 <script>
@@ -14,9 +16,9 @@ export default {
 </script>
 
 <style lang="scss">
-  .mail {
-    padding-top: 72px;
-    padding-bottom: 103px;
+  .contacts {
+    padding-top: 42px;
+    padding-bottom: 42px;
 
     font-size: 40px;
     line-height: 56px;
@@ -28,6 +30,10 @@ export default {
   }
 
   .link {
+    display: block;
+    font-size: 32px;
+    line-height: 140%;
+
     text-decoration: none;
     color: #3431DC;
   }
@@ -37,12 +43,20 @@ export default {
   }
 
   @media (max-width: 768px) {
-    .mail {
-      padding-top: 60px;
-      padding-bottom: 60px;
+    .contacts {
+      padding-top: 42px;
+      padding-bottom: 42px;
 
       font-size: 28px;
       line-height: 36px;
+    }
+
+    .link {
+      font-size: 22px;
+    }
+
+    .phone {
+       font-size: 22px;
     }
   }
 </style>
