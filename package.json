@@ -23,7 +23,7 @@
   "devDependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
     "css-loader": "^3.4.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
